@@ -1,4 +1,4 @@
-<header class="hpage"> un test
+<header class="hpage">
 	<div class="hpage_gauche">
 		<img src="image/logo.PNG" id="logo" alt="logo" height="50%" width="100%"><br/>
         <span>Produit de DomISEP</span>
