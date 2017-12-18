@@ -1,15 +1,15 @@
-<header class="hpage"> 
+<header class="hpage"> un test
 	<div class="hpage_gauche">
 		<img src="image/logo.PNG" id="logo" alt="logo" height="50%" width="100%"><br/>
         <span>Produit de DomISEP</span>
 	</div>
-	
-	<?php 
+
+	<?php
 	   $titre = $_GET['titre'];
 	?>
-                    
+
 	<h1><strong><?php echo $titre ;?></strong></h1>
-                   
+
 	<div class="barre_info">
 	<ul>
       	<li class="lien"><a href="#1">Contacts</a></li>
