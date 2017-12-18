@@ -1,0 +1,529 @@
+/* En-t�te Je fais un test*/
+
+body
+{
+	background: url('image/fond-site.jpg');
+	font-family: 'Glacial indefference', Helvetica, sans-serif;
+}
+
+.hpage
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content : space-between;
+    background-color:rgba(128, 128, 128, 0.336);
+    border-bottom:rgba(128, 128, 128, 0.493) solid 30px;
+    height: 150px;
+}
+
+h1
+{
+    color: green;
+    font-size : 50px;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hpage_gauche
+{
+    color: black;
+    font-size: small;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15%;
+}
+
+.hpage_gauche span
+{
+	text-align:center;
+}
+
+#logo
+{
+    margin-top : 10px;
+}
+
+.barre_info li
+{
+    margin-right: 40px;
+    border-left: 2px solid black;
+    padding-left: 10px;
+
+}
+
+.barre_info
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+/* G�n�ral */
+a
+{
+    color: black;
+    font-size: small;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    text-decoration:none;
+}
+
+.lien
+{
+	font-weight:bold;
+}
+
+a:hover
+{
+    color: green;
+    font-weight: bold;
+}
+
+h4
+{
+    font-weight: bold;
+    font-size: 15px;
+    text-indent: 40px;
+}
+
+ul
+{
+	list-style-type: none;
+}
+
+.corps
+{
+	display:flex;
+}
+
+/* Navigation */
+.nav
+{
+    display: flex;
+    justify-content : space-between;
+    margin-top: 10px;
+    font-size : 15px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.partie
+{
+    width : 125px;
+    height: 20px;
+    background-color: rgba(128, 128, 128, 0.336);
+    box-shadow: 0px 2px 0.5px gray;
+}
+
+/* Notification */
+.notification
+{
+    justify-content : space-between;
+    background: rgba(128, 128, 128, 0.493);
+    height: 500px;
+    width: 160px;
+    margin-top: 10px;
+    padding-right: 5px;
+}
+
+.recherche
+{
+    margin-top: 10px;
+    color: gray;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    border: white solid;
+    background-color: white;
+    width: 130px;
+    height: 20px;
+    margin-left: 7px;
+    margin-bottom: 10px;
+}
+
+.boutique
+{
+    color: black;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: gray;
+    width: 130px;
+    height: 20px;
+    margin-left: 7px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.noti
+{
+    color: white;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: small;
+    margin-left: 7px;
+    margin-bottom: 20px;
+}
+
+
+.alerte
+{
+    color: black;
+    border: gray solid;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    background-color: gray;
+    width: 130px;
+    height: 70px;
+    text-align: center;
+    margin-left: 7px;
+    padding-top: 10px;
+}
+
+.noter
+{
+	position: absolute;
+	top: 675px;
+	width:160px;
+	font-family: 'Glacial indefference', Helvetica, sans-serif;
+}
+
+
+/* footer */
+footer
+{
+    background : rgb(56, 55, 55);
+    color: white;
+    margin-top: 10px;
+    font-size: small;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    height: 140px;
+}
+
+#haut
+{
+    display: flex;
+    justify-content: space-around;
+    height: 120px;
+    margin-left: 30px;
+    margin-right: 50px;
+    border-bottom: white solid 1px;
+    padding-left: 5px;
+    padding-right: 3px;
+}
+
+footer a
+{
+    text-decoration: underline;
+    color: white;
+}
+
+/* Service_client */
+
+#search
+{
+	width:50%;
+}
+
+
+#information
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-top: 30px;
+	width:80%;
+	margin-left: 20px;
+}
+
+
+#consigne
+{
+	display: flex;
+	flex-direction: column;
+	height:70%;
+	justify-content: space-around;
+	position: absolute;
+	right:0px;
+	border-left: 5px solid green;
+}
+
+.bloc
+{
+	border: solid 2px black;
+	border-radius: 10px;
+	margin-right: 10px;
+	padding:5px;
+	text-align: center;
+}
+
+.bloc:hover
+{
+	border: solid 5px green;
+}
+
+
+/* Page de connnexion*/
+#page_co, #page_verif
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 500px;
+}
+
+#page_co form, #page_verif form
+{
+	margin-bottom: 150px;
+}
+
+#inscription
+{
+	position: absolute;
+	top: 340px;
+	left: 50%;
+	font-size: medium;
+	font-style: italic;
+}
+
+/* Page inscription */
+ #page_inscription form
+ {
+ 	border: green solid 2px;
+ 	padding: 20px;
+ 	width: 30%;
+ }
+
+#page_inscription
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+
+/* Page erreur de connexion */
+#verifier
+{
+	text-decoration: underline;
+	font-style: italic;
+	font-size: 20px;
+}
+
+#erreur
+{
+	text-align: center;
+	font-size: 20px;
+}
+
+/* Tableau de bord */
+.dropdown
+{
+    position: relative;
+    display: inline-block;
+	background-color: rgba(244, 166, 42, 1.0);
+    color: black;
+    left: 10px;
+    top: 11px;
+    right: 10px;
+    width: 95%;
+    height: 30px;
+    margin-bottom: 20px;
+    max-height: 57px;
+
+}
+
+.dropdown-content
+{
+    display: none;
+    background-color: #f9f9f9;
+    min-width: 20%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    position: absolute;
+}
+
+.deux span, .deux .dropdown-content
+{
+	margin-left: 25%;
+}
+
+.trois span, .trois .dropdown-content
+{
+	margin-left: 50%;
+}
+
+.quatre span, .quatre .dropdown-content
+{
+	margin-left: 75%;
+}
+
+.dropdown:hover .dropdown-content
+{
+    display: block;
+}
+
+.dropdown a
+{
+  border-bottom: 2px;
+  border-color: black;
+}
+
+.onglet
+{
+	border: 5px solid green;
+	border-radius: 10px;
+	height: 150px;
+	overflow: auto;
+	margin: 10px;
+}
+
+.onglet header
+{
+	border-bottom: 5px solid green;
+	font-size: 20px;
+}
+
+.onglet ul
+{
+	display: flex;
+	justify-content: space-around;
+}
+
+.onglet li
+{
+	text-align: center;
+}
+.corps_page
+{
+	margin-left: 20px;
+	width: 100%;
+}
+
+/* 2�me Tableau de bord */
+
+
+/* Page profil */
+#profil
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#profil a
+{
+	font-style: italic;
+}
+
+#profil li
+{
+	margin: 20px;
+	font-size: 20px;
+}
+
+/* Page information */
+
+#info_piece
+{
+	margin-top: 30px;
+	margin-left: 30px;
+	font-size: 20px;
+}
+
+#info_piece li
+{
+	margin: 20px;
+}
+
+#info_piece a
+{
+	margin-top: 10px;
+	font-size: 15px;
+	font-style: italic;
+}
+
+/* forum */
+
+.forum
+{
+	display: flex;
+	width: 80%;
+	justify-content: space-between;
+}
+
+.contenu
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.forum .sujet
+{
+	margin-top: 15px;
+	margin-left: 20px;
+	height: 500px;
+}
+
+
+.forum aside
+{
+	margin-top: 30px;
+	border-left: 5px solid green;
+	padding-left: 10px;
+	position: absolute;
+	right: 40px;
+	height: 70%;
+}
+
+
+th, td
+{
+	border: 2px green solid;
+	padding: 5px;
+	text-align:center;
+}
+
+table
+{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.news
+{
+	margin-top: 50px;
+}
+
+/* sujet forum */
+.topicaffiche a
+{
+	position: absolute;
+	right: 20px;
+	padding: 2px;
+	border: 2px solid green;
+	border-radius: 5px;
+}
+
+.topicaffiche
+{
+	margin-bottom: 30px;
+}
+
+.ajouter_commentaire
+{
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+
+.liste_commentaire
+{
+	border: 2px green solid;
+	margin: 5px;
+	padding: 10px;
+}
