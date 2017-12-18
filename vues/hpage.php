@@ -19,5 +19,3 @@
 	<a href="../controleurs/controleur_deconnexion.php">Deconnexion</a>
 	</div>
 </header>
-
-Je fais un dernier test.
