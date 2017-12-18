@@ -20,4 +20,4 @@
 	</div>
 </header>
 
-Je fais un dernier test
+Je fais un dernier test.
