@@ -21,8 +21,4 @@
         			<?php }?>
         	</table>
         </div>
-        </html>
-
-
-
-
+        </html>ffftyt
