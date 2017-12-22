@@ -10,7 +10,7 @@
      </head>
 
     <body>
-s
+
         <?php include("hpage.php"); ?>
 		<?php include("navigation_client.php"); ?>
 
