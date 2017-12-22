@@ -4,11 +4,9 @@
         <span>Produit de DomISEP</span>
 	</div>
 
-	<?php
-	   $titre = $_GET['titre'];
-	?>
+	
 
-	<h1><strong><?php echo $titre ;?></strong></h1>
+	<p><h1 class="titre"><strong>Tableau de bord</strong> </h1></p>
 
 	<div class="barre_info">
 	<ul>
