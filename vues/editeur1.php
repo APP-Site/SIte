@@ -1,6 +1,5 @@
 <?php session_start()?>
 
-<?php echo bonjour ?>
 <!DOCTYPE html>
 <html>
     <head>
