@@ -16,11 +16,11 @@
 
         <div class="corps">
         	<?php include("notification.php"); ?>
-        	
+
         	<section class="corps_page">
 				<article class="trois">
             		<div class="dropdown">
-  						<span>Choisissez une pièce où l'installer</span>
+  						<div class="etape"><span>Choisissez une pièce où l'installer</span></div>
   						<div class="dropdown-content">
     					<form method="post" action="vue_tableau_de_bord_valider.php?titre=Tableau de bord">
       						<label for="piece">Pièce : </label>
@@ -38,11 +38,11 @@
   						</div>
 					</div>
             	</article>
-        	
-        	<?php 
+
+        	<?php
         	$code=htmlspecialchars($_SESSION['code']);
             $reponse = $bdd->query('SELECT piece.nom, possession_piece.id FROM possession_piece INNER JOIN piece ON possession_piece.id_piece=piece.id WHERE code = "'.$code.'"');
-            
+
             while ($piece = $reponse->fetch())
             { ?>
                 <article class="onglet">
