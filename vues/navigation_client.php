@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <nav>
 	<ul class="nav">
 		<li><?php echo $_SESSION['prenom']?> <?php echo $_SESSION['nom']?></li>
