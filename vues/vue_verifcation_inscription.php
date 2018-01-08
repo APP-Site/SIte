@@ -6,10 +6,11 @@
             <meta charset="UTF-8"/>
             <link rel="stylesheet" href="style.css">
             <title>1ere connexion</title>
+                  
     </head>
 
     <body>
-    
+
     	<div id="page_verif">
     		<p>	<h1>Verification du code</h1>
     			Si c'est votre première connection veuillez récuperer le code fourni lors de votre premier achat pour vous inscrire
@@ -26,7 +27,7 @@
           			<input type="submit" value="Valider"/>
     		</form>
     	</div>
-    	
+
     	<?php include("ppage.php"); ?>
     </body>
  </html>

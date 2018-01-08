@@ -7,6 +7,7 @@
             <meta charset="UTF-8"/>
             <link rel="stylesheet" href="style.css"/>
            <title>Techn'O'Logis-Tableau de Bord</title>
+           
      </head>
 
     <body>
@@ -16,7 +17,7 @@
 
         <div class="corps">
         	<?php include("notification.php"); ?>
-        	
+
         	<section class="corps_page">
 				<article class="trois">
             		<div class="dropdown">
@@ -32,11 +33,11 @@
 						</div>
 					</div>
             	</article>
-        	
-        	<?php 
+
+        	<?php
         	$code=htmlspecialchars($_SESSION['code']);
             $reponse = $bdd->query('SELECT piece.nom, possession_piece.id FROM possession_piece INNER JOIN piece ON possession_piece.id_piece=piece.id WHERE code = "'.$code.'"');
-            
+
             while ($piece = $reponse->fetch())
             { ?>
                 <article class="onglet">
