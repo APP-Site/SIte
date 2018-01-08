@@ -50,81 +50,13 @@
 	Pieces a ajouter:
 	</p>
 
-	<form method="post" action="../Controleur/controleur_editeur.php">
-	<div class = "manychoices">
-   	<article>
-       <input type="checkbox" name="Salon[]" id="salon" />
-       <label for="salon">Salon</label>
-       <select class="salon" 	name="salon" id="salon">
-       	   <option value="0">0</option>
-           <option value="1">1</option>
-           <option value="2">2</option>
-           <option value="3">3</option></select><br/>
+	<form method="post" action="../controleurs/controleur_editeur.php">
+    <p>
+      <label for="nom_piece"> Rentrez le nom de la pièce : </label><br>
+      <input type="text" id="nom_piece" name="nom_piece" size="30">
+    </p>
+    <p>
+      <input type="submit" value="valider">
+    </p>
 
-       <input type="checkbox" name="cuisine[]" id="cuisine" />
-       <label for="cuisine">Cuisine</label>
-       <select class="cuisine" 	name="cuisine" id="cuisine">
-       	   <option value="0">0</option>
-           <option value="1">1</option>
-           <option value="2">2</option>
-           <option value="3">3</option></select><br/>
-
-       <input type="checkbox" name="toilettes[]" id="toilettes" />
-       <label for="toilettes">Toilettes</label>
-       <select class="toilettes" 	name="toilettes" id="toilettes">
-       	   <option value="0">0</option>
-           <option value="1">1</option>
-           <option value="2">2</option>
-           <option value="3">3</option>
-       </select><br/>
-    </article>
-
-    <article>
-       <input type="checkbox" name="chambre[]" id="chambre" />
-       <label for="chambre">Chambre</label>
-       <select class="chambre" 	name="chambre" id="chambre">
-       	   <option value="0">0</option>
-           <option value="1">1</option>
-           <option value="2">2</option>
-           <option value="3">3</option>
-           <option value="4">4</option>
-           <option value="5">5</option>
-       </select><br>
-
-      <input type="checkbox" name="bureau[]" id="bureau" />
-      <label for="bureau">Bureau</label>
-         <select class="bureau" 	name="bureau" id="bureau">
-       	   <option value="0">0</option>
-           <option value="1">1</option>
-           <option value="2">2</option>
-           <option value="3">3</option>
-       </select><br>
-
-       <input type="checkbox" name="salle_de_bain[]" id="salle_de_bain"/>
-       <label for="salle_de_bain">Salle de bain </label>
-       <select class="salle_de_bain" 	name="salle_de_bain" id="bureau">
-       	   <option value="0">0</option>
-           <option value="1">1</option>
-           <option value="2">2</option>
-           <option value="3">3</option>
-       </select><br>
-     </article>
-
-
-    <button class="validity1" type="submit">Valider</button>
-      <form method="post" action="traitement.php">
-
-</form>
-  	</div>
-	</form>
-	<hr class = "ligne2">
-
-
-
-     </div>
-
-        <?php include("ppage.php"); ?>
-
-    </body>
-
-    hhh 
+  </form>
