@@ -2,11 +2,11 @@
 
 <?php ob_start(); ?>
 
-  <?php include("hpage.php"); ?>
-  <?php include("navigation_client.php"); ?>
+  <?php include("pages_base/hpage.php"); ?>
+  <?php include("pages_base/navigation_client.php"); ?>
 
   <div class="corps">
-    <?php include("notification.php"); ?>
+    <?php include("pages_base/notification.php"); ?>
     <div id="info_piece">
       Liste des pieces :
       <ul>
@@ -16,7 +16,7 @@
     </div>
 
   </div>
-  <?php include("ppage.php"); ?>
+  <?php include("pages_base/ppage.php"); ?>
 
 <?php $content = ob_get_clean(); ?>
-<?php require('vues/base.php'); ?>
+<?php require('vues/pages_base/base.php'); ?>

@@ -41,7 +41,7 @@
     		</form>
     	</div>
 
-    	<?php include("ppage.php"); ?>
+    	<?php include("pages_base/ppage.php"); ?>
 
 <?php $content = ob_get_clean(); ?>
-<?php require('vues/base.php'); ?>
+<?php require('vues/pages_base/base.php'); ?>
