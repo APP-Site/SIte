@@ -22,7 +22,7 @@
         Bonjour <?php echo $_SESSION['prenom'];?> <?php  echo $_SESSION['nom']?> !
         </p>
         <p class = "bienvenue">
-        Bienvenue dans l'editeur de votre maison, 1er etape de conception de votre espace. Vous aurez a repertorier les differentes pieces de votre logis en etant le plus exact possible. Vous n'aurez plus qu'en suite a choisir parmis notre large selection de capteurs pour les placer dans vos pieces!
+        Bienvenue dans l'editeur de votre maison, 1er étape de conception de votre espace. Vous aurez a repertorier les differentes pieces de votre logis en etant le plus exact possible. Vous n'aurez plus qu'en suite a choisir parmis notre large selection de capteurs pour les placer dans vos pieces!
         </p><br>
       	<hr class= "ligne">
 

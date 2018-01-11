@@ -14,5 +14,5 @@ $req->execute(array(
 echo $nom_piece;
 
 $req -> closeCursor();
-
+a
 ?>
