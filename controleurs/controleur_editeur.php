@@ -2,14 +2,17 @@
 
 include(../modele/modele_connexion_bdd.php);
 
-$req = $bdd->prepare("INSERT INTO piece(nom) VALUES(:nom)");
+$nom_piece = $_POST['nom_piece']
+
+$req = $bdd->prepare('INSERT INTO possession_piece(nom_piece) VALUES(:nom_piece)');
 
 $req->execute(array(
 
-
-':nom' => $_POST['nom'],
+':nom_piece' => $nom_piece
 ));
 
-echo $_POST['nom'];
+echo $nom_piece;
+
 $req -> closeCursor();
+
 ?>

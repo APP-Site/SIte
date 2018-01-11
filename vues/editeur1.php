@@ -1,10 +1,11 @@
 <?php session_start()?>
 
+
 <!DOCTYPE html>
 <html>
     <head>
             <meta charset="UTF-8"/>
-            <link rel="stylesheet" href="editeur.css"/>
+            <link rel="stylesheet" href="style.css"/>
            <title>Techn'O'Logis-Tableau de Bord</title>
      </head>
 
@@ -25,31 +26,18 @@
         </p><br>
       	<hr class= "ligne">
 
-        <p class="logis">
-        Type de logis :
-        </p>
-<form class = "check">
-	<div class ="c1">
-    <input type="radio" id="choix1"
-     name="contact" value="Maison">
-    <label for="choix1">Maison</label>
-    </div>
-    <div class="c2">
-    <input type="radio" id="choix2"
-     name="contact" value="Appartement">
-    <label for="choix2">Appartement</label>
-    </div>
+        <form class="nom_piece" action="../controleurs/controleur_editeur.php" method="post">
+          <div>
+            <label class = "ajout_piece" for="nom_piece"> Nom de la pièce à ajouter :</label><br>
+            <input class="bloc" type="text" name="nom_piece" id="nom_piece" placeholder="Exemple : Salon"/><br>
+            <button class="validity" type="submit">Valider</button>
+          </div>
 
-    <div>
-    <button class="validity" type="submit">Valider</button>
-    </div>
 </form>
 	<hr class ="ligne1">
-	<p class="pi�ces">
-	Pieces a ajouter:
-	</p>
 
-	<form method="post" action="../Controleur/controleur_editeur.php">
+
+	<form method="post" action="">
 	<div class = "manychoices">
    	<article>
        <input type="checkbox" name="Salon[]" id="salon" />
