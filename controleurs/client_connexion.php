@@ -9,7 +9,8 @@
     $nb = verif_email($email);
     if ($nb == 1){
       $donnee = verif_mdp($email);
-      if ($mdp == $donnee['pass']){
+      $mdp_crypte = sha1($mdp);
+      if ($mdp == $donnee['pass']){ // remplacer $mdp par $mdp_crypte quand la table sera jour
         session_start();
         $_SESSION['nom'] = $donnee['nom'];
         $_SESSION['prenom'] = $donnee['prenom'];
@@ -64,7 +65,9 @@ function formulaire_inscription(){
 function poste_inscription($email, $code, $nom, $prenom, $adresse, $codep, $ville, $portable, $mdp){
   require ('modeles/modele_connecter_utilisateur.php');
 
-  inser_inscription($nom, $prenom, $adresse, $codep, $ville, $portable, $mdp, $email, $code);
+  $mdp_crypte = sha1($mdp);
+  inser_inscription($nom, $prenom, $adresse, $codep, $ville, $portable, $mdp_crypte, $email, $code);
+  suppression($email, $code);
   header ('Location: index.php?');
 }
 

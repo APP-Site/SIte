@@ -49,4 +49,10 @@ function inser_inscription($nom, $prenom, $adresse, $codep, $ville, $portable, $
       ':code' => $code,
     ));
   }
+
+  function suppression($email, $code){
+    $bdd = bddConnect();
+    $req = $bdd -> prepare('DELETE FROM nouveau_client WHERE email= ? AND code= ?');
+    $req->execute(array($email, $code));
+  }
 ?>

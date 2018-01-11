@@ -31,7 +31,7 @@
       }
 
       elseif ($_GET['action'] == 'poste_inscription'){
-        if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['adresse']) && !empty($_POST['code_postal']) && !empty($_POST['ville']) && !empty($_POST['telephone_portable'])) {
+        if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['adresse']) && !empty($_POST['code_postal']) && !empty($_POST['ville']) && !empty($_POST['telephone_portable']) && !empty($_POST['pass'])) {
           poste_inscription($_GET['email'], $_GET['code'], $_POST['nom'], $_POST['prenom'], $_POST['adresse'], $_POST['code_postal'], $_POST['ville'], $_POST['telephone_portable'], $_POST['pass']);
         }
         else { throw new Exception('Tous les champs ne sont pas remplis !'); }
