@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- correspond à la base de toute page vue pour éviter de répéter la structure -->
 <html>
     <head>
         <meta charset="utf-8" />

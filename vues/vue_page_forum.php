@@ -1,4 +1,4 @@
-<?php $titre="Forum"; ?>
+<?php $titre="Forum"; ?> <!-- affiche la page du forum -->
 
 <?php ob_start(); ?>
 
@@ -13,13 +13,13 @@
 
       <article class="ongletForum">
         <div class="sujet">
-          <form class="creationtopic" action="index.php?action=creation_topic" method="post">
+          <form class="creationtopic" action="index.php?action=creation_topic" method="post"> <!-- créer un sujet dans le forum -->
             <p class="contenu"><label for="titre_sujet_forum">Titre : </label><input type="text" name="titre_sujet_forum" id="titre_sujet_forum" size="91" /></p>
             <p class="contenu"><label for="contenu_sujet_forum">Contenu : </label><textarea name="contenu_sujet_forum" id="contenu_sujet_forum" rows="4" cols="75"></textarea></p>
             <input type="submit" value="Creer" class="creer"/>
           </form>
 
-          <div class="liste_sujet">
+          <div class="liste_sujet"> <!-- affiche dans un tableau les cinq derniers sujets -->
             <div class="news">
               <table>
                 <tr>

@@ -1,4 +1,4 @@
-<?php $titre = "Profil" ?>
+<?php $titre = "Profil" ?> <!-- affiche les informations de l'utilisateur -->
 
 <?php ob_start(); ?>
 

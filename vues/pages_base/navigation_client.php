@@ -1,4 +1,4 @@
-<nav>
+<nav> <!-- affiche le menu de navigation -->
 	<ul class="nav">
 		<li><?php echo $_SESSION['prenom']?> <?php echo $_SESSION['nom']?></li>
 		<li class="partie"><a href="index.php?action=tableau_bord">Tableau de bord</a></li>

@@ -22,9 +22,6 @@
         else { throw new Exception('Tous les champs ne sont pas remplis !'); }
       }
 
-      elseif ($_GET['action'] == 'erreur') {
-        erreur();
-      }
 
       elseif ($_GET['action'] == 'formulaire_inscription'){
         formulaire_inscription();

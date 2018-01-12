@@ -8,7 +8,7 @@
     	?>
     	<div id="page_inscription">
     		<h1>Inscription</h1>
-    		<form method="post" action="index.php?action=poste_inscription&email=<?= $email ?>&code=<?= $code ?>" id="formulaire_inscription" >
+    		<form method="post" action="index.php?action=poste_inscription&email=<?= $email ?>&code=<?= $code ?>" id="formulaire_inscription" > <!-- garde en valeur le code client et l'email du client -->
     			<p>
     				<label for="nom">Nom : </label><br>
     				<input type="text" id="nom" name="nom" size="30">
