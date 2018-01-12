@@ -22,8 +22,12 @@
             		<div class="dropdown">
   						<div class="etape"><span>Valiation de l'ajout</span></div>
   						<div class="dropdown-content">
-    						<a href='vue_tableau_de_bord.php?titre=Tableau de bord'>Valider</a><br>
-    						<a href='vue_tableau_de_bord.php?titre=Tableau de bord'>Annuler</a><br>
+                <form method="post" action="../controleurs/controleur_ajout_capteur.php">
+        						<label for="finalisation">Finaliser : </label>
+                    <input type="submit" value="Valider" name="finalisation" />
+                    <input type="submit" value="Annuler" name="finalisation"/>
+                    <input type="submit" value="Précédent" name="finalisation"/>
+                </form>
   						</div>
 					</div>
             	</article>

@@ -22,16 +22,19 @@
             		<div class="dropdown">
   						<div class="etape"><span>Selectionner le type de capteur</span></div>
 						<div class="dropdown-content">
-  							<form method="post" action="vue_tableau_de_bord_ajouter_3sur4.php?titre=Tableau de bord">
-    							<label for="capteur">Type : </label>
+  							<form method="post" action="../controleurs/controleur_ajout_capteur.php">
+    							<label for="capteur" >Type : </label>
       							<select name="capteur">
-        							<option value="presence">Capteur de présence</option>
-        							<option value="luminosite">Capteur de luminosité</option>
-        							<option value="temperature">Capteur de température</option>
-        							<option value="humidite">Capteur d'humiditée</option>
-        							<option value="fumee">Capteur de fumée</option>
-        							<option value="mouvement">Capteur de mouvement</option>
-        							<option value="CO2">Capteur de CO2</option>
+                      <?php
+                      include('../modele/modele_connexion_bdd.php');
+                      $reponse = $bdd->query('SELECT type FROM capteur_actionneur WHERE statut = "capteur"');
+
+                      while ($donnees = $reponse->fetch())
+                      {
+                        echo ' <option value = ' . $donnees['type'] . '>' . $donnees['type'] . '</option>';
+                      }
+                      $reponse -> closeCursor();
+                       ?>
       							</select>
     							<input type="submit" value="Suivant"/>
   							</form>

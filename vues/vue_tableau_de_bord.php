@@ -12,7 +12,7 @@
     <body>
 
         <?php include("hpage.php"); ?>
-		<?php include("navigation_client.php"); ?>
+		    <?php include("navigation_client.php"); ?>
 
         <div class="corps">
         	<?php include("notification.php"); ?>
