@@ -5,7 +5,7 @@ require_once ('modeles/modele_connexion_bdd.php');
 function select_piece($code){  // sélectionner les pièces de l'utilisateur grâce à son code
 
   $bdd = bddConnect();
-  $req = $bdd->prepare('SELECT piece.nom, possession_piece.id FROM possession_piece INNER JOIN piece ON possession_piece.id_piece=piece.id WHERE code = ?');
+  $req = $bdd->prepare('SELECT * FROM possession_piece WHERE code = ?');
   $req -> execute(array($code));
   return $req;
 }
