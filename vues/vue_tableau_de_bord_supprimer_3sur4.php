@@ -16,27 +16,46 @@
 
         <div class="corps">
         	<?php include("notification.php"); ?>
-        	
+
         	<section class="corps_page">
 				<article class="trois">
             		<div class="dropdown">
-  						<span>Selectionner le capteur à supprimer</span>
-						<div class="dropdown-content">
-  							<p><a href="vue_tableau_de_bord_valider.php?titre=Tableau de bord">Capteur de présence</a></p>
-  							<p><a href="vue_tableau_de_bord_valider.php?titre=Tableau de bord">Capteur de luminosité</a></p>
-  							<p><a href="vue_tableau_de_bord_valider.php?titre=Tableau de bord">Capteur temperature</a></p>
-  							<p><a href="vue_tableau_de_bord_valider.php?titre=Tableau de bord">Capteur d'humiditée</a></p>
-  							<p><a href="vue_tableau_de_bord_valider.php?titre=Tableau de bord">Capteur de fumée</a></p>
-  							<p><a href="vue_tableau_de_bord_valider.php?titre=Tableau de bord">Capteur de mouvement</a></p>
-  							<p><a href="vue_tableau_de_bord_valider.php?titre=Tableau de bord">Capteur de CO2</a></p>
-						</div>
+                  <div class="etape"><span>Selectionner le type de capteur</span></div>
+    						<div class="dropdown-content">
+      							<form method="post" action="../controleurs/controleur_suppression_capteur.php">
+        							<label for="capteur" >Type : </label>
+          							<select name="capteur">
+                          <?php
+                          //Connexion BDD
+                          include('../modele/modele_connexion_bdd.php');
+
+                          //On récupère dans la base de donné tous les capteurs qui appartiennent à la personne connectée dans la pièce selectionnée à l'étape précedente
+                          $reponse = $bdd->prepare('SELECT id_capteur_actionneur FROM possession_capteur_actionneur WHERE nom_piece= ? AND code = ?');
+                          $reponse ->execute(array($_SESSION['piece'], $_SESSION['code']));
+
+                          //Comme on a récupèré des id de capteur il faut récupèrer leurs nom
+                          while ($donnees = $reponse->fetch())
+                          {
+                            //On les affiches sous forme de formulaire
+                            $rep = $bdd->prepare('SELECT type FROM capteur_actionneur WHERE id = ?');
+                            $rep ->execute(array($donnees['id_capteur_actionneur']));
+                            $don = $rep->fetch();
+                            echo ' <option value = ' . $don['type'] . '>' . $don['type'] . '</option>';
+                            $rep ->closeCursor();
+                          }
+                          $reponse -> closeCursor();
+                           ?>
+          							</select>
+        							<input type="submit" value="Suivant"/>
+      							</form>
+    						</div>
 					</div>
             	</article>
-        	
-        	<?php 
+
+        	<?php
         	$code=htmlspecialchars($_SESSION['code']);
             $reponse = $bdd->query('SELECT piece.nom, possession_piece.id FROM possession_piece INNER JOIN piece ON possession_piece.id_piece=piece.id WHERE code = "'.$code.'"');
-            
+
             while ($piece = $reponse->fetch())
             { ?>
                 <article class="onglet">

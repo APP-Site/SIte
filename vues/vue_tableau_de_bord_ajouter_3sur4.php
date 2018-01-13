@@ -36,7 +36,7 @@
                     $reponse -> closeCursor();
                      ?>
         					</select>
-      						<input type="submit" value="Suivant"/>
+      						<input type="submit" value="Suivant" name="redirection"/>
     					</form>
   						</div>
 					</div>

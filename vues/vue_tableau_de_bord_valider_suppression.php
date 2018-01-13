@@ -18,26 +18,16 @@
         	<?php include("notification.php"); ?>
 
         	<section class="corps_page">
-				<article class="deux">
+				<article class="quatre">
             		<div class="dropdown">
-  						<div class="etape"><span>Selectionner la pièce du capteur à supprimer</span></div>
+  						<div class="etape"><span>Valiation de l'ajout</span></div>
   						<div class="dropdown-content">
                 <form method="post" action="../controleurs/controleur_suppression_capteur.php">
-        						<label for="piece">Pièce : </label>
-          					<select name="piece">
-                      <?php
-                      include('../modele/modele_connexion_bdd.php');
-                      $reponse = $bdd->query('SELECT nom_piece FROM possession_piece WHERE code = "'.$_SESSION['code'].'"');
-
-                      while ($donnees = $reponse->fetch())
-                      {
-                        echo ' <option value = ' . $donnees['nom_piece'] . '>' . $donnees['nom_piece'] . '</option>';
-                      }
-                      $reponse -> closeCursor();
-                       ?>
-          					</select>
-        						<input type="submit" value="Suivant"/>
-      					</form>
+        						<label for="finalisation">Finaliser : </label>
+                    <input type="submit" value="Valider" name="finalisation" />
+                    <input type="submit" value="Annuler" name="finalisation"/>
+                    <input type="submit" value="Précédent" name="finalisation"/>
+                </form>
   						</div>
 					</div>
             	</article>
