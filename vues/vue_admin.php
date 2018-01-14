@@ -2,44 +2,40 @@
 <html>
     <head>
             <meta charset="UTF-8"/>
-            <link rel="stylesheet" href="style.css"/>
+            <link rel="stylesheet" href="vue_admin.css"/>
            <title>Techn'O'Logis Administrateur</title>
      </head>
      <header class="header">
        <?php include("hpage.php"); ?>
     </header>
     <body>
-      <section class="recherche">
+      <div class="recherche">
+        <p>Rechercher un client</p>
   			<form method="post" action="../controleurs/controleur_recherche_client_admin.php">
-  				<label for="search">Recherche client : </label>
-          <input type="search" name="search" id="search" placeholder="Inserer code client" size="70">
+  				<label for="search"></label>
+          <input type="search" name="search" id="search" placeholder="Inserer code client" size="70"></br>
+          </br>
   				<input type="submit" value="Rechercher">
         </br>
   			</form>
-        <form method="post" action="../controleurs/controleur_ajouter_capteur_admin.php">
-          <label for="ajouter">Ajouter un nouveau capteur à la liste des capteurs déjà existantes : </label>
-          <input type="text" name="ajouter" id="ajouter" placeholder="Ex : température" size="70">
-          <input type="submit" value="Ajouter">
-        </form>
-
-
-
-        <article id="info">
-              <?php include("../modele/modele_admin.php"); ?>
-              <h3>Information client</h3>
-                <ul>
-                  <li>Nom: <?php echo $client['nom'];?> <?php echo $client['prenom'];?></li>
-                  <li>Adresse: <?php echo $client['adresse'];?> <?php echo $client['code_postal']?> <?php echo $client['ville']?></li>
-                  <li>Telephone: <?php echo $client['telephone_portable'];?></li>
-                  <li>E-mail: <?php echo $client['email'];?></li>
-                </ul>
-        </article>
-    </section>
-
-
-
-
-
+      </div>
+        <div class="ajouer">
+          <p>Ajouter un capteur au catalogue </p>
+          <form method="post" action="../controleurs/controleur_ajouter_capteur_admin.php">
+              <label for="statut">Statut : </label>
+              <select><option>Statut </select></br>
+              <label for="type">Type : </label>
+              <input type="text" name="type" id="type" placeholder="Ex : température" size="70"></br>
+              <label for="unite">Unité : </label>
+              <input type="text" name="unite" id="unite" placeholder="Ex : °C" size="70"></br>
+              <label for="ref">Référence : </label>
+              <input type="text" name="ref" id="ref" placeholder="Ex : FRT74" size="70"></br>
+              <label for="image">Image : </label>
+              <input type="file" name="image" id="image" ></br>
+              </br>
+              <input type="submit" value="Ajouter">
+          </form>
+        </div>
 
 
 
