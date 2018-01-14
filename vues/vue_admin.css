@@ -1,4 +1,136 @@
-.body
+body
 {
-  background-image: url("images/fond.jpeg");
+	background: url('image/fond-site.jpg');
+	font-family: 'Glacial indefference', Helvetica, sans-serif;
+  justify-content : space-between;
+
+}
+
+.hpage
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content : space-between;
+    background-color:rgba(128, 128, 128, 0.336);
+    border-bottom:rgba(128, 128, 128, 0.493) solid 30px;
+    height: 150px;
+}
+
+h1
+{
+    color: green;
+    font-size : 50px;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hpage_gauche
+{
+    color: black;
+    font-size: small;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15%;
+}
+
+.hpage_gauche span
+{
+	text-align:center;
+}
+
+#logo
+{
+    margin-top : 10px;
+}
+
+.barre_info li
+{
+    margin-right: 40px;
+    border-left: 2px solid black;
+    padding-left: 10px;
+
+}
+
+.barre_info
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+/* G�n�ral */
+a
+{
+    color: black;
+    font-size: small;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    text-decoration:none;
+}
+
+.lien
+{
+	font-weight:bold;
+}
+
+a:hover
+{
+    color: green;
+    font-weight: bold;
+}
+
+h4
+{
+    font-weight: bold;
+    font-size: 15px;
+    text-indent: 40px;
+}
+
+ul
+{
+	list-style-type: none;
+}
+
+.corps
+{
+	display:flex;
+}
+
+p
+{
+  font-size: 20px;
+  font-family: 'Glacial indefference', Helvetica, sans-serif;
+}
+
+
+footer
+{
+    background : rgb(56, 55, 55);
+    color: white;
+    margin-top: 10px;
+    font-size: small;
+    font-family: 'Glacial indefference', Helvetica, sans-serif;
+    height: 140px;
+}
+
+#haut
+{
+    display: flex;
+    justify-content: space-around;
+    height: 120px;
+    margin-left: 30px;
+    margin-right: 50px;
+    border-bottom: white solid 1px;
+    padding-left: 5px;
+    padding-right: 3px;
+}
+
+footer a
+{
+    text-decoration: underline;
+    color: white;
 }
