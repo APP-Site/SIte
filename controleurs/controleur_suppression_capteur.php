@@ -28,7 +28,7 @@ $_SESSION['finalisation'] = $_POST['finalisation'];
 //Connexion BDD
 include('../modele/modele_connexion_bdd.php');
 //Recuperation de l'id du type de capteur
-include('../modele/modele_recuperer_id_type_capteur.php');
+include('../modele/modele_recuperer_id_type_capteur.php');..
 
 //Test sur la quel bouton à appuyé l'utilisateur soi valider soit annuler soir prrécédent
 if($_SESSION['finalisation']=='Valider')
