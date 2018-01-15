@@ -2,7 +2,7 @@
 
 
 <!DOCTYPE html>
-<html>f
+<html>ff
     <head>
             <meta charset="UTF-8"/>
             <link rel="stylesheet" href="editeur.css"/>
