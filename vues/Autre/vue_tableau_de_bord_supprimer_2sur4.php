@@ -16,26 +16,36 @@
 
         <div class="corps">
         	<?php include("notification.php"); ?>
-        	
+
         	<section class="corps_page">
 				<article class="deux">
             		<div class="dropdown">
-  						<span>Selectionner la pièce du capteur à supprimer</span>
+  						<div class="etape"><span>Selectionner la pièce du capteur à supprimer</span></div>
   						<div class="dropdown-content">
-  							<p><a href='vue_tableau_de_bord_supprimer_3sur4.php?titre=Tableau de bord'>Salon</a></p>
-  							<p><a href='vue_tableau_de_bord_supprimer_3sur4.php?titre=Tableau de bord'>Cuisine</a></p>
-  							<p><a href='vue_tableau_de_bord_supprimer_3sur4.php?titre=Tableau de bord'>Chambre parents</a></p>
-  							<p><a href='vue_tableau_de_bord_supprimer_3sur4.php?titre=Tableau de bord'>Chambre enfant 1</a></p>
-  							<p><a href='vue_tableau_de_bord_supprimer_3sur4.php?titre=Tableau de bord'>Chambre enfant 2</a></p>
-  							<p><a href='vue_tableau_de_bord_supprimer_3sur4.php?titre=Tableau de bord'>Jardin</a></p>
+                <form method="post" action="../controleurs/controleur_supprimer_capteur.php">
+        						<label for="piece">Pièce : </label>
+          					<select name="piece">
+                      <?php
+                      include('../modele/modele_connexion_bdd.php');
+                      $reponse = $bdd->query('SELECT nom_piece FROM possession_piece WHERE code = "'.$_SESSION['code'].'"');
+
+                      while ($donnees = $reponse->fetch())
+                      {
+                        echo ' <option value = ' . $donnees['nom_piece'] . '>' . $donnees['nom_piece'] . '</option>';
+                      }
+                      $reponse -> closeCursor();
+                       ?>
+          					</select>
+        						<input type="submit" value="Suivant"/>
+      					</form>
   						</div>
 					</div>
             	</article>
-        	
-        	<?php 
+
+        	<?php
         	$code=htmlspecialchars($_SESSION['code']);
             $reponse = $bdd->query('SELECT piece.nom, possession_piece.id FROM possession_piece INNER JOIN piece ON possession_piece.id_piece=piece.id WHERE code = "'.$code.'"');
-            
+
             while ($piece = $reponse->fetch())
             { ?>
                 <article class="onglet">

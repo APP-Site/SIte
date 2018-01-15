@@ -324,18 +324,17 @@ footer a
 {
     position: relative;
     display: inline-block;
-	background-color: rgba(244, 166, 42, 1.0);
+		background-color: rgba(244, 166, 42, 1.0);
     color: black;
     left: 10px;
     top: 11px;
     right: 10px;
-    width: 95%;
-    height: 30px;
+    width: 99%;
+    height: 50px;
     margin-bottom: 20px;
     max-height: 57px;
 
 }
-
 .dropdown-content
 {
     display: none;
@@ -344,23 +343,55 @@ footer a
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     position: absolute;
+		top: 50px;
+		left: 0px;
+
+}
+.etape
+{
+	margin-top: 15px;
+	margin-left: 15px;
+	font-weight: bold;
 }
 
+.deux .etape
+{
+	margin-top: 15px;
+}
+.deux .dropdown .dropdown-content
+{
+    display: block;
+}
 .deux span, .deux .dropdown-content
 {
 	margin-left: 25%;
 }
 
+.trois .etape
+{
+	margin-top: 15px;
+}
+.trois .dropdown .dropdown-content
+{
+    display: block;
+}
 .trois span, .trois .dropdown-content
 {
 	margin-left: 50%;
 }
 
+.quatre .etape
+{
+	margin-top: 15px;
+}
+.quatre .dropdown .dropdown-content
+{
+    display: block;
+}
 .quatre span, .quatre .dropdown-content
 {
 	margin-left: 75%;
 }
-
 .dropdown:hover .dropdown-content
 {
     display: block;

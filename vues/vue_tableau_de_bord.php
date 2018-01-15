@@ -9,16 +9,7 @@
     <?php include("pages_base/notification.php"); ?>
 
     <section class="corps_page">
-      <article class="un">
-        <div class="dropdown">
-          <span>Ajouter/Supprimer/Modifier</span>
-          <div class="dropdown-content">
-            <a href='vue_tableau_de_bord_ajouter_2sur4.php?titre=Tableau de bord'>Ajouter un capteur</a><br>
-            <a href='vue_tableau_de_bord_supprimer_2sur4.php?titre=Tableau de bord'>Supprimer un capteur</a><br>
-            <a href='vue_tableau_de_bord_modifier.php'>Modifier un capteur</a>
-          </div>
-        </div>
-      </article>
+      <?php include ('vues/vue_ajouter_supprimer.php'); ?>
 
       <?php while ($piece = $pieces->fetch()) // affiche les pièces de l'utilisateurs
       { ?>

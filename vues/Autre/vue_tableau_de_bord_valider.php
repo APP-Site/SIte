@@ -16,22 +16,26 @@
 
         <div class="corps">
         	<?php include("notification.php"); ?>
-        	
+
         	<section class="corps_page">
 				<article class="quatre">
             		<div class="dropdown">
-  						<span>Valiation de l'ajout</span>
+  						<div class="etape"><span>Valiation de l'ajout</span></div>
   						<div class="dropdown-content">
-    						<a href='vue_tableau_de_bord.php?titre=Tableau de bord'>Valider</a><br>
-    						<a href='vue_tableau_de_bord.php?titre=Tableau de bord'>Annuler</a><br>
+                <form method="post" action="../controleurs/controleur_ajout_capteur.php">
+        						<label for="finalisation">Finaliser : </label>
+                    <input type="submit" value="Valider" name="finalisation" />
+                    <input type="submit" value="Annuler" name="finalisation"/>
+                    <input type="submit" value="Précédent" name="finalisation"/>
+                </form>
   						</div>
 					</div>
             	</article>
-        	
-        	<?php 
+
+        	<?php
         	$code=htmlspecialchars($_SESSION['code']);
             $reponse = $bdd->query('SELECT piece.nom, possession_piece.id FROM possession_piece INNER JOIN piece ON possession_piece.id_piece=piece.id WHERE code = "'.$code.'"');
-            
+
             while ($piece = $reponse->fetch())
             { ?>
                 <article class="onglet">
