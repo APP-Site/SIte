@@ -2,7 +2,7 @@
 
 
 <!DOCTYPE html>
-<html>ffff
+<html>pour valider git
     <head>
             <meta charset="UTF-8"/>
             <link rel="stylesheet" href="editeur.css"/>
