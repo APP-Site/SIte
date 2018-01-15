@@ -29,12 +29,15 @@ $_SESSION['finalisation'] = $_POST['finalisation'];
 include('../modele/modele_connexion_bdd.php');
 //Recuperation de l'id du type de capteur
 include('../modele/modele_recuperer_id_type_capteur.php');
+//Recuperation de l'id de la ligne a supprimer dans possession_capteur_actionneur
+include('../modele/modele_recuperer_id_possession_capteur_actionneur.php');
 
+echo $id_suppression;
 //Test sur la quel bouton à appuyé l'utilisateur soi valider soit annuler soir prrécédent
 if($_SESSION['finalisation']=='Valider')
 {
-  $req = $bdd->prepare('DELETE  FROM possession_capteur_actionneur WHERE code = ? AND nom_piece = ? AND id_capteur_actionneur = ?');
-  $req->execute(array($_SESSION['code'], $_SESSION['nom_piece'], $_SESSION['id_capteur_actionneur']));
+  $req = $bdd->prepare('DELETE  FROM possession_capteur_actionneur WHERE id=?');
+  $req->execute(array($id_suppression));
   header('Location: ../vues/vue_tableau_de_bord.php?titre=Tableau de bord');
 }
 elseif($_SESSION['finalisation']=='Annuler')
@@ -47,4 +50,5 @@ elseif($_SESSION['finalisation']=='Précédent')
   unset($_SESSION['capteur']);
   header('Location: ../vues/vue_tableau_de_bord_supprimer_3sur4.php?titre=Tableau de bord');
 }
+
 ?>
