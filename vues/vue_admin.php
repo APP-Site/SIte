@@ -10,7 +10,7 @@
     </header>
     <body>
       <div class="recherche">
-        <p>Rechercher un client</p>
+        <div class="titre2"><p>Rechercher un client</p></div>
   			<form method="post" action="../controleurs/controleur_recherche_client_admin.php">
   				<label for="search"></label>
           <input type="search" name="search" id="search" placeholder="Inserer code client" size="70"></br>
@@ -20,7 +20,7 @@
   			</form>
       </div>
         <div class="ajouer">
-          <p>Ajouter un capteur au catalogue </p>
+          <p class="titre2">Ajouter un capteur au catalogue </p>
           <form method="post" action="../controleurs/controleur_ajouter_capteur_admin.php">
               <label for="statut">Statut : </label>
               <select><option>Statut </select></br>
