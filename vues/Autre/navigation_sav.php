@@ -5,4 +5,4 @@
 		<li class="partie"><a href="#1">SAV</a></li>
 		<li class="partie"><a href="#1">Forum</a></li>
 	</ul>
-</nav>
+</nav> pour valider git 
