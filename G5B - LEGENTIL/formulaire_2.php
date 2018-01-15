@@ -17,5 +17,5 @@
 </form>
  <p> les catégories seront listés ici
 	<a href="formulaire_3.php">Votre compte</a></p>
-</body>gb
+</body>gbgrb
 </html>
