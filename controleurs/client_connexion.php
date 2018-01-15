@@ -1,4 +1,4 @@
-<?php
+<?php s
   function connexion() {  // renvoie vers la page de connexion
     require ('vues/vue_pConnexion.php');
   }
