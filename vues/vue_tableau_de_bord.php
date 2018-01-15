@@ -7,6 +7,7 @@
             <meta charset="UTF-8"/>
             <link rel="stylesheet" href="style.css"/>
            <title>Techn'O'Logis-Tableau de Bord</title>
+          
      </head>
 
     <body>
