@@ -13,7 +13,7 @@ function select_piece($code){  // sélectionner les pièces de l'utilisateur gr�
 function select_capteur_actionneur($code){ //selectionne les capteurs_actionneur de l'utilisateur
 
   $bdd = bddConnect();
-  $req = $bdd->prepare('SELECT image, type.nom, possession_capteur_actionneur.id_possession_piece, possession_capteur_actionneur.id, unite FROM type, possession_capteur_actionneur, capteur_actionneur WHERE possession_capteur_actionneur.id_capteur_actionneur = capteur_actionneur.id AND capteur_actionneur.id_type = type.id AND code = ?');
+  $req = $bdd->prepare('SELECT * FROM possession_capteur_actionneur, capteur_actionneur WHERE possession_capteur_actionneur.id_capteur_actionneur = capteur_actionneur.id AND code = ?');
   $req -> execute(array($code));
   return $req;
 }
