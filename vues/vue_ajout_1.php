@@ -15,7 +15,7 @@
           <div class="dropdown-content">
             <form method="post" action="index.php?action=ajout_2">
               <label for="capteur" >Type : </label>
-              <select name="capteur">
+              <select name="capteur" id="capteur">
                 <?php while ($type = $types->fetch())
                 {
                   echo ' <option value = ' . $type['type'] . '>' . $type['type'] . '</option>';
