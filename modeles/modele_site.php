@@ -26,6 +26,12 @@ function select_donnee($data2){ // sélectionne les vlaeurs du capteur_actionneu
   return $res;
 }
 
+function select_type(){
+  $bdd = bddConnect();
+  $req = $bdd -> query('SELECT type FROM capteur_actionneur WHERE statut = "capteur"');
+  return $req;
+}
+
 function sujet_forum(){ //sélectionne les 5 derniers sujets
   $bdd = bddConnect();
   $req = $bdd->query('SELECT * FROM sujet_forum, utilisateur WHERE sujet_forum.code = utilisateur.code ORDER BY date_sujet_forum DESC LIMIT 0, 5');

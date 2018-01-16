@@ -9,6 +9,15 @@
     require ('vues/vue_ajout_suppression.php');
   }
 
+  function ajout_1() {
+    session_start();
+    $code=htmlspecialchars($_SESSION['code']);
+    require ('modeles/modele_site.php');
+    $types = select_type();
+    $pieces = select_piece($code); // sélectionne toute les pieces qui portent le code de l'utilisateur
+    require ('vues/vue_ajout_1.php');
+  }
+
   function profil() { // renvoie la page profil
     session_start();
     require ('vues/vue_profil.php');

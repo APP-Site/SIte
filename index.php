@@ -38,6 +38,10 @@
         tableau_bord();
       }
 
+      elseif ($_GET['action'] == 'ajout_1'){
+        ajout_1();
+      }
+
       elseif ($_GET['action'] == 'profil') {
         profil();
       }

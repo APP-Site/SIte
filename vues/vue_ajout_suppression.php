@@ -13,8 +13,8 @@
         <div class="dropdown">
           <span>Ajouter/Supprimer</span>
           <div class="dropdown-content">
-            <a href='vue_tableau_de_bord_ajouter_2sur4.php?titre=Tableau de bord'>Ajouter un capteur</a><br>
-            <a href='vue_tableau_de_bord_supprimer_2sur4.php?titre=Tableau de bord'>Supprimer un capteur</a><br>
+            <a href='index.php?action=ajout_1'>Ajouter un capteur</a><br>
+            <a href='index.php?action=suppression_1'>Supprimer un capteur</a><br>
           </div>
         </div>
       </article>
