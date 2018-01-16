@@ -42,6 +42,28 @@
         ajout_1();
       }
 
+      elseif ($_GET['action'] == 'ajout_type'){
+        if (!empty($_POST['capteur'])){
+          ajout_type($_POST['capteur']);
+        }
+        else { throw new Exception('Veuillez sélectionner un type de capteur !'); }
+      }
+
+      elseif ($_GET['action'] == 'ajout_2'){
+        ajout_2();
+      }
+
+      elseif ($_GET['action'] == 'ajout_piece'){
+        if (!empty($_POST['piece'])){
+          ajout_piece($_POST['piece']);
+        }
+        else { throw new Exception('Veuillez sélectionner la pièce où mettre le capteur !'); }
+      }
+
+      elseif ($_GET['action'] == 'validation_ajout'){
+        validation_ajout();
+      }
+
       elseif ($_GET['action'] == 'profil') {
         profil();
       }

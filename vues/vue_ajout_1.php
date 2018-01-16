@@ -13,7 +13,7 @@
         <div class="dropdown">
           <div class="etape"><span>Selectionner le type de capteur</span></div>
           <div class="dropdown-content">
-            <form method="post" action="index.php?action=ajout_2">
+            <form method="post" action="index.php?action=ajout_type">
               <label for="capteur" >Type : </label>
               <select name="capteur" id="capteur">
                 <?php while ($type = $types->fetch())
