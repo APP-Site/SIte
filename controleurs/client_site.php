@@ -6,7 +6,7 @@
 
     require ('modeles/modele_site.php');
     $pieces = select_piece($code); // sélectionne toute les pieces qui portent le code de l'utilisateur
-    require ('vues/vue_tableau_de_bord.php');
+    require ('vues/vue_ajout_suppression.php');
   }
 
   function profil() { // renvoie la page profil
