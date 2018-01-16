@@ -64,6 +64,10 @@
         validation_ajout();
       }
 
+      elseif ($_GET['action'] == 'valider'){
+        validation_capteur();
+      }
+
       elseif ($_GET['action'] == 'profil') {
         profil();
       }

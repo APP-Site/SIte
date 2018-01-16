@@ -47,6 +47,14 @@
     require ('vues/vue_ajout_validation.php');
   }
 
+  function validation_capteur(){
+    session_start();
+    $piece = $_SESSION['piece'];
+    $type = ['type'];
+    require ('modeles/modele_site.php');
+    
+  }
+
   function profil() { // renvoie la page profil
     session_start();
     require ('vues/vue_profil.php');
