@@ -12,33 +12,33 @@
     <body>
 
         <?php include("hpage.php"); ?>
-		<?php include("navigation_client.php"); ?>
+		    <?php include("navigation_client.php"); ?>
 
         <div class="corps">
         	<?php include("notification.php"); ?>
 
         	<section class="corps_page">
-				<article class="deux">
+				<article class="trois">
             		<div class="dropdown">
-  						<div class="etape"><span>Selectionner le type de capteur</span></div>
-						<div class="dropdown-content">
-  							<form method="post" action="../controleurs/controleur_ajout_capteur.php">
-    							<label for="capteur" >Type : </label>
-      							<select name="capteur">
-                      <?php
-                      include('../modele/modele_connexion_bdd.php');
-                      $reponse = $bdd->query('SELECT type FROM capteur_actionneur WHERE statut = "capteur"');
+  						<div class="etape"><span>Choisissez une pièce où l'installer</span></div>
+  						<div class="dropdown-content">
+    					<form method="post" action="../controleurs/controleur_ajout_actionneur.php">
+      						<label for="piece">Pièce : </label>
+        					<select name="piece">
+                    <?php
+                    include('../modele/modele_connexion_bdd.php');
+                    $reponse = $bdd->query('SELECT nom_piece FROM possession_piece WHERE code = "'.$_SESSION['code'].'"');
 
-                      while ($donnees = $reponse->fetch())
-                      {
-                        echo ' <option value = ' . $donnees['type'] . '>' . $donnees['type'] . '</option>';
-                      }
-                      $reponse -> closeCursor();
-                       ?>
-      							</select>
-    							<input type="submit" value="Suivant"/>
-  							</form>
-						</div>
+                    while ($donnees = $reponse->fetch())
+                    {
+                      echo ' <option value = ' . $donnees['nom_piece'] . '>' . $donnees['nom_piece'] . '</option>';
+                    }
+                    $reponse -> closeCursor();
+                     ?>
+        					</select>
+      						<input type="submit" value="Suivant" />
+    					</form>
+  						</div>
 					</div>
             	</article>
 
@@ -68,6 +68,7 @@
                     	</div>
                 	</article>
                 <?php }?>
+
         	</section>
         </div>
 

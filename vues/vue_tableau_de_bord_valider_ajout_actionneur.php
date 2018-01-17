@@ -18,27 +18,17 @@
         	<?php include("notification.php"); ?>
 
         	<section class="corps_page">
-				<article class="deux">
+				<article class="quatre">
             		<div class="dropdown">
-  						<div class="etape"><span>Selectionner le type de capteur</span></div>
-						<div class="dropdown-content">
-  							<form method="post" action="../controleurs/controleur_ajout_capteur.php">
-    							<label for="capteur" >Type : </label>
-      							<select name="capteur">
-                      <?php
-                      include('../modele/modele_connexion_bdd.php');
-                      $reponse = $bdd->query('SELECT type FROM capteur_actionneur WHERE statut = "capteur"');
-
-                      while ($donnees = $reponse->fetch())
-                      {
-                        echo ' <option value = ' . $donnees['type'] . '>' . $donnees['type'] . '</option>';
-                      }
-                      $reponse -> closeCursor();
-                       ?>
-      							</select>
-    							<input type="submit" value="Suivant"/>
-  							</form>
-						</div>
+  						<div class="etape"><span>Valiation de l'ajout</span></div>
+  						<div class="dropdown-content">
+                <form method="post" action="../controleurs/controleur_ajout_actionneur.php">
+        						<label for="finalisation">Finaliser : </label>
+                    <input type="submit" value="Valider" name="finalisation" />
+                    <input type="submit" value="Annuler" name="finalisation"/>
+                    <input type="submit" value="Précédent" name="finalisation"/>
+                </form>
+  						</div>
 					</div>
             	</article>
 
@@ -68,6 +58,7 @@
                     	</div>
                 	</article>
                 <?php }?>
+
         	</section>
         </div>
 

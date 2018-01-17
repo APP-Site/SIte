@@ -20,14 +20,14 @@
         	<section class="corps_page">
 				<article class="deux">
             		<div class="dropdown">
-  						<div class="etape"><span>Selectionner le type de capteur</span></div>
+  						<div class="etape"><span>Selectionner le type d'actionneur'</span></div>
 						<div class="dropdown-content">
-  							<form method="post" action="../controleurs/controleur_ajout_capteur.php">
-    							<label for="capteur" >Type : </label>
-      							<select name="capteur">
+  							<form method="post" action="../controleurs/controleur_ajout_actionneur.php">
+    							<label for="actionneur" >Type : </label>
+      							<select name="actionneur">
                       <?php
                       include('../modele/modele_connexion_bdd.php');
-                      $reponse = $bdd->query('SELECT type FROM capteur_actionneur WHERE statut = "capteur"');
+                      $reponse = $bdd->query('SELECT type FROM capteur_actionneur WHERE statut = "actionneur"');
 
                       while ($donnees = $reponse->fetch())
                       {

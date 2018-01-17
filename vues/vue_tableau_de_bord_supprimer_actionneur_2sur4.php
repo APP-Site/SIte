@@ -20,25 +20,25 @@
         	<section class="corps_page">
 				<article class="deux">
             		<div class="dropdown">
-  						<div class="etape"><span>Selectionner le type de capteur</span></div>
-						<div class="dropdown-content">
-  							<form method="post" action="../controleurs/controleur_ajout_capteur.php">
-    							<label for="capteur" >Type : </label>
-      							<select name="capteur">
+  						<div class="etape"><span>Selectionner la pièce de l'actionneur à supprimer</span></div>
+  						<div class="dropdown-content">
+                <form method="post" action="../controleurs/controleur_suppression_actionneur.php">
+        						<label for="piece">Pièce : </label>
+          					<select name="piece">
                       <?php
                       include('../modele/modele_connexion_bdd.php');
-                      $reponse = $bdd->query('SELECT type FROM capteur_actionneur WHERE statut = "capteur"');
+                      $reponse = $bdd->query('SELECT nom_piece FROM possession_piece WHERE code = "'.$_SESSION['code'].'"');
 
                       while ($donnees = $reponse->fetch())
                       {
-                        echo ' <option value = ' . $donnees['type'] . '>' . $donnees['type'] . '</option>';
+                        echo ' <option value = ' . $donnees['nom_piece'] . '>' . $donnees['nom_piece'] . '</option>';
                       }
                       $reponse -> closeCursor();
                        ?>
-      							</select>
-    							<input type="submit" value="Suivant"/>
-  							</form>
-						</div>
+          					</select>
+        						<input type="submit" value="Suivant"/>
+      					</form>
+  						</div>
 					</div>
             	</article>
 
@@ -68,6 +68,7 @@
                     	</div>
                 	</article>
                 <?php }?>
+
         	</section>
         </div>
 

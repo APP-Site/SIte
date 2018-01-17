@@ -20,30 +20,32 @@
         	<section class="corps_page">
 				<article class="un">
             		<div class="dropdown">
-  						<div class="etape"><span>Ajouter/Supprimer/Modifier</span><div>
+  						<div class="etape"><span>Ajouter/Supprimer un capteur/actionneur</span><div>
   						<div class="dropdown-content">
     						<a href='vue_tableau_de_bord_ajouter_2sur4.php?titre=Tableau de bord'>Ajouter un capteur</a><br><br>
-    						<a href='vue_tableau_de_bord_supprimer_2sur4.php?titre=Tableau de bord'>Supprimer un capteur</a><br>
+    						<a href='vue_tableau_de_bord_supprimer_2sur4.php?titre=Tableau de bord'>Supprimer un capteur</a><br><br>
+                <a href='vue_tableau_de_bord_ajouter_actionneur_2sur4.php?titre=Tableau de bord'>Ajouter un actionneur</a><br><br>
+                <a href='vue_tableau_de_bord_supprimer_actionneur_2sur4.php?titre=Tableau de bord'>Supprimer un actionneur</a><br>
   						</div>
 					</div>
-            	</article>
+        </article>
 
         	<?php
         	$code=htmlspecialchars($_SESSION['code']);
-            $reponse = $bdd->query('SELECT piece.nom, possession_piece.id FROM possession_piece INNER JOIN piece ON possession_piece.id_piece=piece.id WHERE code = "'.$code.'"');
+            $reponse = $bdd->query('SELECT * FROM possession_piece  WHERE code = "'.$code.'"');
 
             while ($piece = $reponse->fetch())
             { ?>
                 <article class="onglet">
                 	<div>
-            		  	<header><?php echo $piece['nom']; ?></header>
+            		  	<header><?php echo $piece['nom_piece']; ?></header>
                    		<ul>
                    			<?php
-                   			$data=htmlspecialchars($piece['id']);
-                   			$resultat = $bdd->query('SELECT image, type.nom, possession_capteur_actionneur.id_possession_piece, possession_capteur_actionneur.id, unite FROM type, possession_capteur_actionneur, capteur_actionneur WHERE possession_capteur_actionneur.id_capteur_actionneur = capteur_actionneur.id AND capteur_actionneur.id_type = type.id AND code = "'.$code.'" ');
+                   			$data=htmlspecialchars($piece['nom_piece']);
+                   			$resultat = $bdd->query('SELECT * FROM possession_capteur_actionneur, capteur_actionneur WHERE possession_capteur_actionneur.id_capteur_actionneur = capteur_actionneur.id AND code = "'.$code.'" ');
                    			while ($objet = $resultat->fetch())
                    			{
-                   			  if ($data==$objet['id_possession_piece'])
+                   			  if ($data==$objet['nom_piece'])
                    			  {
                    			      $data2=htmlspecialchars($objet['id']);
                    			      $donnee = $bdd->query('SELECT valeur FROM donnee WHERE id_possession_capteur_actionneur = "'.$data2.'" ');

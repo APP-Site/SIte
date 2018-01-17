@@ -18,27 +18,40 @@
         	<?php include("notification.php"); ?>
 
         	<section class="corps_page">
-				<article class="deux">
+				<article class="trois">
             		<div class="dropdown">
-  						<div class="etape"><span>Selectionner le type de capteur</span></div>
-						<div class="dropdown-content">
-  							<form method="post" action="../controleurs/controleur_ajout_capteur.php">
-    							<label for="capteur" >Type : </label>
-      							<select name="capteur">
-                      <?php
-                      include('../modele/modele_connexion_bdd.php');
-                      $reponse = $bdd->query('SELECT type FROM capteur_actionneur WHERE statut = "capteur"');
+                  <div class="etape"><span>Selectionner le type d'actionneur</span></div>
+    						<div class="dropdown-content">
+      							<form method="post" action="../controleurs/controleur_suppression_actionneur.php">
+        							<label for="actionneur" >Type : </label>
+          							<select name="actionneur">
+                          <?php
+                          //Connexion BDD
+                          include('../modele/modele_connexion_bdd.php');
 
-                      while ($donnees = $reponse->fetch())
-                      {
-                        echo ' <option value = ' . $donnees['type'] . '>' . $donnees['type'] . '</option>';
-                      }
-                      $reponse -> closeCursor();
-                       ?>
-      							</select>
-    							<input type="submit" value="Suivant"/>
-  							</form>
-						</div>
+                          //On récupère dans la base de donné tous les actionneurs qui appartiennent à la personne connectée dans la pièce selectionnée à l'étape précedente
+                          $reponse = $bdd->prepare('SELECT id_capteur_actionneur FROM possession_capteur_actionneur WHERE nom_piece= ? AND code = ?');
+                          $reponse ->execute(array($_SESSION['piece'], $_SESSION['code']));
+
+                          //Comme on a récupèré des id d'actionneur il faut récupèrer leurs nom
+                          while ($donnees = $reponse->fetch())
+                          {
+                            //On les affiches sous forme de formulaire
+                            $rep = $bdd->prepare('SELECT type, statut FROM capteur_actionneur WHERE id = ?');
+                            $rep ->execute(array($donnees['id_capteur_actionneur']));
+                            $don = $rep->fetch();
+                            if($don['statut']=="actionneur")
+                            {
+                              echo ' <option value = ' . $don['type'] . '>' . $don['type'] . '</option>';
+                              $rep ->closeCursor();
+                            }
+                          }
+                          $reponse -> closeCursor();
+                           ?>
+          							</select>
+        							<input type="submit" value="Suivant"/>
+      							</form>
+    						</div>
 					</div>
             	</article>
 
@@ -68,6 +81,7 @@
                     	</div>
                 	</article>
                 <?php }?>
+
         	</section>
         </div>
 
