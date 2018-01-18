@@ -61,7 +61,14 @@
 
   function annulation_capteur(){
     session_start();
-    
+    unset($_SESSION['capteur'], $_SESSION['piece']);
+    header ('Location: index.php?action=tableau_bord');
+  }
+
+  function precedent_capteur(){
+    session_start();
+    unset($_SESSION['piece']);
+    header ('Location: index.php?action=ajout_2');
   }
 
   function profil() { // renvoie la page profil

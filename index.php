@@ -72,6 +72,10 @@
         annulation_capteur();
       }
 
+      elseif ($_GET['action'] == 'precedent') {
+        precedent_capteur();
+      }
+
       elseif ($_GET['action'] == 'profil') {
         profil();
       }

@@ -15,13 +15,13 @@
           <div class="dropdown-content">
             <ul>
               <li><a href="index.php?action=valider">Valider</a></li>
+              <li><a href="index.php?action=precedent">Précédent</a></li>
               <li><a href="index.php?action=annuler">Annuler</a></li>
             </ul>
           </div>
         </div>
       </article>
-      <?= $_SESSION['capteur'] ?>
-      <?= $_SESSION['piece'] ?>
+
       <?php include('vues/vue_tableau_de_bord.php'); ?>
 
     </section>
