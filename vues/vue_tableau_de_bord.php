@@ -9,7 +9,7 @@
           {
             $data = htmlspecialchars($piece['nom']);
             $data2=htmlspecialchars($objet['nom_piece']);
-            if ($data == $objet['id_possession_piece'])
+            if ($data == $objet['nom_piece'])
             {
               $valeur = select_donnee($data2); ?>
               <li><img src="<?php echo $objet['image'];?>"><br><?php echo $valeur['valeur']?> <?php echo $objet['unite'];?></li>
