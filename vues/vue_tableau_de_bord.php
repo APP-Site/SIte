@@ -7,8 +7,8 @@
           <?php $capteurs_actionneurs = select_capteur_actionneur($code);
           while ($objet = $capteurs_actionneurs->fetch())
           {
-            $data = htmlspecialchars($piece['id']);
-            $data2=htmlspecialchars($objet['id']);
+            $data = htmlspecialchars($piece['nom']);
+            $data2=htmlspecialchars($objet['nom_piece']);
             if ($data == $objet['id_possession_piece'])
             {
               $valeur = select_donnee($data2); ?>

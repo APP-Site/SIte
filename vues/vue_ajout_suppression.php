@@ -11,7 +11,7 @@
     <section class="corps_page">
       <article class="un">
         <div class="dropdown">
-          <span>Ajouter/Supprimer</span>
+          <div class="etape"><span>Ajouter/Supprimer</span></div>
           <div class="dropdown-content">
             <a href='index.php?action=ajout_1'>Ajouter un capteur</a><br>
             <a href='index.php?action=suppression_1'>Supprimer un capteur</a><br>
