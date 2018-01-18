@@ -42,7 +42,7 @@ function id_type($capteur) {
 
 function type($piece, $code) {
   $bdd = bddConnect();
-  $req = $bdd -> prepare('SELECT type FROM capteur_actionneur, possession_capteur_actionneur WHERE nom_piece = ? AND code = ? AND id_capteur_actionneur = capteur_actionneur.id');
+  $req = $bdd -> prepare('SELECT * FROM capteur_actionneur, possession_capteur_actionneur WHERE nom_piece = ? AND code = ?  ');
   $req -> execute(array($piece, $code));
   return $req;
 }
