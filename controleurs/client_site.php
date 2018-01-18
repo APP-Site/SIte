@@ -20,7 +20,9 @@
 
   function ajout_type($capteur) {
     session_start();
-    $_SESSION['capteur'] = $capteur; // garder en mémoire le type de capteur sélecctionné
+    require ('modeles/modele_site.php');
+    $id_capteur = id_type($capteur);
+    $_SESSION['capteur'] = $id_capteur; // garder en mémoire le type de capteur sélecctionné
     header ('Location: index.php?action=ajout_2');
   }
 
@@ -49,10 +51,12 @@
 
   function validation_capteur(){
     session_start();
+    $id_capteur = $_SESSION['capteur'];
     $piece = $_SESSION['piece'];
-    $type = ['type'];
+    $code = $_SESSION['code'];
     require ('modeles/modele_site.php');
-    
+    ajout_capteur($id_capteur, $piece, $code);
+    header ('Location: index.php?action=tableau_bord');
   }
 
   function profil() { // renvoie la page profil

@@ -20,7 +20,8 @@
           </div>
         </div>
       </article>
-
+      <?= $_SESSION['capteur'] ?>
+      <?= $_SESSION['piece'] ?>
       <?php include('vues/vue_tableau_de_bord.php'); ?>
 
     </section>

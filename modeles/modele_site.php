@@ -28,8 +28,22 @@ function select_donnee($data2){ // sélectionne les vlaeurs du capteur_actionneu
 
 function select_type(){
   $bdd = bddConnect();
-  $req = $bdd -> query('SELECT type FROM capteur_actionneur WHERE statut = "capteur"');
+  $req = $bdd -> query('SELECT * FROM capteur_actionneur WHERE statut = "capteur"');
   return $req;
+}
+
+function id_type($capteur) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare('SELECT id FROM capteur_actionneur WHERE type = ?');
+  $req -> execute(array($capteur));
+  $res = $req -> fetch();
+  return $res['id'];
+}
+
+function ajout_capteur($id_capteur, $piece, $code){
+  $bdd = bddConnect();
+  $req = $bdd->prepare('INSERT INTO possession_capteur_actionneur(id_capteur_actionneur, etat, fonctionnement, id_possession_piece, code) VALUES (?, 1, 1, ?, ?)');
+$req -> execute(array($id_capteur, $piece, $code));
 }
 
 function sujet_forum(){ //sélectionne les 5 derniers sujets
