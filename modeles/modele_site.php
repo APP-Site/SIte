@@ -40,6 +40,13 @@ function id_type($capteur) {
   return $res['id'];
 }
 
+function type($piece, $code) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare('SELECT type FROM capteur_actionneur, possession_capteur_actionneur WHERE nom_piece = ? AND code = ? AND id_capteur_actionneur = capteur_actionneur.id');
+  $req -> execute(array($piece, $code));
+  return $req;
+}
+
 function ajout_capteur($id_capteur, $piece, $code){
   $bdd = bddConnect();
   $req = $bdd->prepare('INSERT INTO possession_capteur_actionneur(id_capteur_actionneur, etat, fonctionnement, id_possession_piece, code) VALUES (?, 1, 1, ?, ?)');

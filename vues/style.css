@@ -324,7 +324,7 @@ footer a
 {
     position: relative;
     display: inline-block;
-	background-color: rgba(244, 166, 42, 1.0);
+		background-color: rgba(244, 166, 42, 1.0);
     color: black;
     left: 10px;
     top: 11px;
@@ -413,7 +413,6 @@ footer a
 	width: 100%;
 }
 
-/* 2�me Tableau de bord */
 
 
 /* Page profil */

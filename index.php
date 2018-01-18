@@ -76,6 +76,21 @@
         precedent_capteur();
       }
 
+      elseif ($_GET['action'] == 'suppression_1'){
+        suppression_1();
+      }
+
+      elseif ($_GET['action'] == 'sup_piece') {
+        if (!empty($_POST['piece'])){
+          sup_piece($_POST['piece']);
+        }
+        else { throw new Exception('Veuillez sélectionner la pièce qui contient le capteur voulu !'); }
+      }
+
+      elseif ($_GET['action'] == 'suppression_2') {
+        suppression_2();
+      }
+
       elseif ($_GET['action'] == 'profil') {
         profil();
       }

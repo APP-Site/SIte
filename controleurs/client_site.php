@@ -71,6 +71,31 @@
     header ('Location: index.php?action=ajout_2');
   }
 
+  function suppression_1(){
+    session_start();
+    $code=htmlspecialchars($_SESSION['code']);
+    require ('modeles/modele_site.php');
+    $pieces_ajout = select_piece($code); // affiche les pieces du client pour supprimer un capteur
+    $pieces = select_piece($code); // affiche les pieces du client pour visualisation du tableau de bord
+    require ('vues/vue_suppression_1.php');
+  }
+
+  function sup_piece($piece){
+    session_start();
+    $_SESSION['piece'] = $piece;
+    header('Location: index.php?action=suppression_2');
+  }
+
+  function suppression_2(){
+    session_start();
+    $code=htmlspecialchars($_SESSION['code']);
+    $piece=htmlspecialchars($_SESSION['piece']);
+    require ('modeles/modele_site.php');
+    $pieces = select_piece($code);
+    $types = type($piece, $code);
+    require ('vues/vue_suppression_2.php');
+  }
+
   function profil() { // renvoie la page profil
     session_start();
     require ('vues/vue_profil.php');
