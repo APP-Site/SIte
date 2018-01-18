@@ -9,6 +9,8 @@ session_start()
 if (isset($_POST['piece']) && empty($_POST['actionneur']))
 {
   $_SESSION['piece'] = $_POST['piece'];
+  //On teste la validitée de la varriable récupérée
+  include('../modele/modele_securite_var_piece.php');
   header('Location: ../vues/vue_tableau_de_bord_supprimer_actionneur_3sur4.php?titre=Tableau de bord');
   exit();
 }
@@ -17,6 +19,8 @@ if (isset($_POST['piece']) && empty($_POST['actionneur']))
 elseif (isset($_POST['actionneur']) && empty($_POST['finalisation']))
 {
   $_SESSION['actionneur'] = $_POST['actionneur'];
+  //On test la validitée de la varriable récupérée
+  include('../modele/modele_securite_var_capteur_actionneur.php');
   header('Location: ../vues/vue_tableau_de_bord_valider_suppression_actionneur.php?titre=Tableau de bord');
   exit();
 }
