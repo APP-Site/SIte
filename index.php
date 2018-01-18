@@ -68,6 +68,10 @@
         validation_capteur();
       }
 
+      elseif ($_GET['action'] == 'annuler'){
+        annulation_capteur();
+      }
+
       elseif ($_GET['action'] == 'profil') {
         profil();
       }

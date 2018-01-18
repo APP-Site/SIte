@@ -59,6 +59,11 @@
     header ('Location: index.php?action=tableau_bord');
   }
 
+  function annulation_capteur(){
+    session_start();
+    
+  }
+
   function profil() { // renvoie la page profil
     session_start();
     require ('vues/vue_profil.php');
