@@ -1,6 +1,7 @@
 <?php
   require ('controleurs/client_connexion.php');
   require ('controleurs/client_site.php');
+  require ('controleurs/client_tableau_bord.php');
 
   try {
     if (isset($_GET['action'])) {
@@ -32,6 +33,17 @@
           poste_inscription($_GET['email'], $_GET['code'], $_POST['nom'], $_POST['prenom'], $_POST['adresse'], $_POST['code_postal'], $_POST['ville'], $_POST['telephone_portable'], $_POST['pass']);
         }
         else { throw new Exception('Tous les champs ne sont pas remplis !'); }
+      }
+
+      elseif ($_GET['action'] == "editeur") {
+        editeur();
+      }
+
+      elseif ($_GET['action'] == "poste_piece") {
+        if (!empty($_POST['id_piece'])) {
+          poste_piece($_POST['id_piece']);
+        }
+        else { throw new Exception('Veuillez écire le nom d\'une de vos pièces!');}
       }
 
       elseif ($_GET['action'] == 'tableau_bord'){

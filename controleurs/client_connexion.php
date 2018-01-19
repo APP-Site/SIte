@@ -65,7 +65,18 @@ function poste_inscription($email, $code, $nom, $prenom, $adresse, $codep, $vill
   $mdp_crypte = sha1($mdp);
   inser_inscription($nom, $prenom, $adresse, $codep, $ville, $portable, $mdp_crypte, $email, $code);
   suppression($email, $code);
-  header ('Location: index.php?');
+
+  session_start();
+  $_SESSION['nom'] = $nom;
+  $_SESSION['prenom'] = $prenom;
+  $_SESSION['adresse'] = $adresse;
+  $_SESSION['code_postal'] = $codep;
+  $_SESSION['ville'] = $donnee['ville'];
+  $_SESSION['telephone_portable'] = $portable;
+  $_SESSION['email'] = $email;
+  $_SESSION['code'] = $code;
+
+  header ('Location: index.php?action=editeur');
 } // insère dans la table client les données et supprime dans la table nouveau_client la ligne correspondante
 
 function deconnexion(){ // Permet de se déconnecter et de renvoyer vers la page de connexion

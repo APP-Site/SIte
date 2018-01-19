@@ -7,6 +7,7 @@
 
   <div class="corps">
     <?php include("pages_base/notification.php"); ?>
+    
     <div id="info_piece">
       Liste des pieces :
       <ul>

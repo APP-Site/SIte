@@ -2,6 +2,12 @@
 
 require_once ('modeles/modele_connexion_bdd.php');
 
+function insert_piece($nom, $code) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare('INSERT INTO possession_piece (nom, code) VALUES (?, ?)');
+  $req -> execute(array($nom, $code));
+}
+
 function select_piece($code){  // sélectionner les pièces de l'utilisateur grâce à son code
 
   $bdd = bddConnect();

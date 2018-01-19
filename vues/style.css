@@ -184,11 +184,24 @@ ul
 .noter
 {
 	position: absolute;
-	top: 675px;
+	top: 650px;
 	width:160px;
 	font-family: 'Glacial indefference', Helvetica, sans-serif;
 }
 
+.notation  a
+{
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color .4s;
+}
+
+ .notation  a:hover, .notation  a:focus, .notation  a:hover ~ a, .notation  a:focus ~ a
+	{
+    color: rgba(255, 230, 0, 0.89);
+    cursor: pointer;
+ 	}
 
 /* footer */
 footer
@@ -217,6 +230,43 @@ footer a
 {
     text-decoration: underline;
     color: white;
+}
+
+/* Editeur */
+
+.intro_editeur
+{
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.nom_piece
+{
+	display: flex;
+	padding-left: 50px;
+}
+
+.nom_piece label, .nom_piece input, .nom_piece button
+{
+	margin: 10px;
+}
+
+.form_editeur
+{
+	padding: 20px;
+}
+
+.valider_edit
+{
+	padding: 30px
+}
+
+.validity
+{
+	color : green ;
+	border-radius: 4px;
+	font-size : 100%;
 }
 
 /* Service_client */
