@@ -55,7 +55,7 @@ function type($piece, $code) {
 
 function ajout_capteur($id_capteur, $piece, $code){
   $bdd = bddConnect();
-  $req = $bdd->prepare('INSERT INTO possession_capteur_actionneur(id_capteur_actionneur, etat, fonctionnement, id_possession_piece, code) VALUES (?, 1, 1, ?, ?)');
+  $req = $bdd->prepare('INSERT INTO possession_capteur_actionneur(id_capteur_actionneur, etat, fonctionnement, nom_piece, code) VALUES (?, 1, 1, ?, ?)');
   $req -> execute(array($id_capteur, $piece, $code));
 }
 
