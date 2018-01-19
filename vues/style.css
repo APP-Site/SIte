@@ -106,19 +106,29 @@ ul
     display: flex;
     justify-content : space-between;
     margin-top: 10px;
-    font-size : 15px;
+    font-size : 18px;
     text-align: center;
     margin-right: 10px;
+		padding-left: 3px;
+}
+.nav_utilisateur
+{
+ 	position: left;
+ 	padding-top: 7px;
 }
 
 .partie
 {
-    width : 125px;
-    height: 20px;
+    width : 230px;
+    height: 27px;
     background-color: rgba(128, 128, 128, 0.336);
     box-shadow: 0px 2px 0.5px gray;
+		padding-top: 5px;
 }
-
+.partie a
+{
+		font-size: 18px;
+}
 /* Notification */
 .notification
 {
