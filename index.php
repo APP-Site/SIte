@@ -1,7 +1,8 @@
 <?php
-  require ('controleurs/client_connexion.php');
+  require ('controleurs/controleur_connexion.php');
   require ('controleurs/client_site.php');
   require ('controleurs/client_tableau_bord.php');
+  require ('controleurs/admin_site.php');
 
   try {
     if (isset($_GET['action'])) {
@@ -163,6 +164,30 @@
           creation_commentaire($_GET['id'], $_POST['contenu_commentaire']);
         }
         else { throw new Exception('Tous les champs ne sont pas remplis !'); }
+      }
+
+      elseif ($_GET['action'] == "admin") {
+        admin();
+      }
+
+      elseif ($_GET['action'] == "admin_recherche_client") {
+        if (!empty($_POST['search_admin'])) {
+          admin_client($_POST['search_admin']);
+        }
+        else { throw new Exception('Veuillez insérer un code client !'); }
+      }
+
+      elseif ($_GET['action'] == "admin_ajout_capteur") {
+        if (!empty($_POST['type']) && !empty($_POST['unite']) && !empty($_POST['image']) &&!empty($_POST['ref'])) {
+          admin_ajout_capteur($_POST['type'], $_POST['unite'], $_POST['image'], $_POST['ref']);
+        }
+        else { throw new Exception('Tous les champs ne sont pas remplis !'); }
+      }
+
+      elseif ($_GET['action'] == "supprimer_client") {
+        if (!empty($_GET['code'])) {
+          supprimer_client($_GET['code']);
+        }
       }
 
       elseif ($_GET['action'] == 'deconnexion'){

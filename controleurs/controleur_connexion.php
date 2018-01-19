@@ -11,17 +11,23 @@
       $donnee = verif_mdp($email);
       $mdp_crypte = sha1($mdp);
       if ($mdp == $donnee['pass']){ // remplacer $mdp par $mdp_crypte quand la table sera jour. Si le mot de passe correspond à l'email l'utilisateur peut se connecter
-        session_start();
-        $_SESSION['nom'] = $donnee['nom'];
-        $_SESSION['prenom'] = $donnee['prenom'];
-        $_SESSION['adresse'] = $donnee['adresse'];
-        $_SESSION['code_postal'] = $donnee['code_postal'];
-        $_SESSION['ville'] = $donnee['ville'];
-        $_SESSION['telephone_portable'] = $donnee['telephone_portable'];
-        $_SESSION['email'] = $donnee['email'];
-        $_SESSION['code'] = $donnee['code'];
+        if ($donnee['statut_utilisateur'] == "client"){
+          session_start();
+          $_SESSION['nom'] = $donnee['nom'];
+          $_SESSION['prenom'] = $donnee['prenom'];
+          $_SESSION['adresse'] = $donnee['adresse'];
+          $_SESSION['code_postal'] = $donnee['code_postal'];
+          $_SESSION['ville'] = $donnee['ville'];
+          $_SESSION['telephone_portable'] = $donnee['telephone_portable'];
+          $_SESSION['email'] = $donnee['email'];
+          $_SESSION['code'] = $donnee['code'];
 
-        header ('Location: index.php?action=tableau_bord'); // redirection vers le tableau de bord
+          header ('Location: index.php?action=tableau_bord'); // redirection vers le tableau de bord
+        }
+        elseif ($donnee['statut_utilisateur'] == "administrateur") {
+          header ('Location: index.php?action=admin');
+          exit;
+        }
       }
       else{
         throw new Exception('Le mot de passe ou l\'email sont faux'); //si le mot de passe ne correspond pas à l'email
