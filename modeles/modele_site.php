@@ -9,11 +9,22 @@ function insert_piece($nom, $code) {
 }
 
 function select_piece($code){  // sélectionner les pièces de l'utilisateur grâce à son code
-
   $bdd = bddConnect();
   $req = $bdd->prepare('SELECT * FROM possession_piece WHERE code = ?');
   $req -> execute(array($code));
   return $req;
+}
+
+function delete_piece($piece, $code) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare ('DELETE FROM possession_piece WHERE nom = ? AND code = ?');
+  $req -> execute(array($piece, $code));
+}
+
+function delete_capteur($piece, $code) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare('DELETE FROM possession_capteur_actionneur WHERE nom_piece = ? AND code = ?');
+  $req -> execute(array($piece, $code));
 }
 
 function select_capteur_actionneur($code){ //selectionne les capteurs_actionneur de l'utilisateur

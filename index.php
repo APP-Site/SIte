@@ -46,6 +46,19 @@
         else { throw new Exception('Veuillez écire le nom d\'une de vos pièces!');}
       }
 
+      elseif ($_GET['action'] == "supprimer_piece") {
+        if (!empty($_GET['piece'])) {
+          supprimer_piece($_GET['piece']);
+        }
+      }
+
+      elseif ($_GET['action'] == "rajout_piece") {
+        if (!empty($_POST['rajout_piece'])) {
+          rajout_piece($_POST['rajout_piece']);
+        }
+        else { throw new Exception('Veuillez rentre le nom d\'une pièce avant de valider !'); }
+      }
+
       elseif ($_GET['action'] == 'tableau_bord'){
         tableau_bord();
       }

@@ -9,6 +9,23 @@ function tableau_bord() { //revoie le tableau de bord
   require ('vues/vue_ajout_suppression.php');
 }
 
+function supprimer_piece($piece){
+  session_start();
+  $code=htmlspecialchars($_SESSION['code']);
+  require ('modeles/modele_site.php');
+  delete_piece($piece, $code);
+  delete_capteur($piece, $code);
+  header ('Location: index.php?action=tableau_bord');
+}
+
+function rajout_piece($piece) {
+  session_start();
+  $code=htmlspecialchars($_SESSION['code']);
+  require ('modeles/modele_site.php');
+  insert_piece($piece, $code);
+  header ('Location: index.php?action=tableau_bord');
+}
+
 function ajout_1() {
   session_start();
   $code=htmlspecialchars($_SESSION['code']);

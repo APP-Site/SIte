@@ -2,7 +2,7 @@
   { ?>
     <article class="onglet">
       <div>
-        <header><?php echo $piece['nom']; ?></header>
+        <header><?php echo $piece['nom']; ?> <a href="index.php?action=supprimer_piece&piece=<?= $piece['nom'] ?>">(Supprimer la pièce)</a></header>
         <ul>
           <?php $capteurs_actionneurs = select_capteur_actionneur($code);
           while ($objet = $capteurs_actionneurs->fetch())
@@ -18,3 +18,8 @@
         </div>
       </article>
     <?php }?>
+    <article>
+      <form action="index.php?action=rajout_piece" method="post">
+        <label for="rajout_piece">Rajouter une pièce : </label><input type="text" name="rajout_piece" id="rajout_piece"><input type="submit" value="Rajouter">
+      </form>
+    </article>

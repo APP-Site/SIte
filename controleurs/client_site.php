@@ -7,6 +7,7 @@
 
   function poste_piece($piece){
     session_start();
+    $piece = htmlspecialchars($piece);
     $code = htmlspecialchars($_SESSION['code']);
     require ('modeles/modele_site.php');
     insert_piece($piece, $code);
