@@ -1,3 +1,3 @@
 <?php
-echo "Erreure modification du formulaire non accéptée";
+echo "Erreur modification du formulaire non accéptée";
  ?>
