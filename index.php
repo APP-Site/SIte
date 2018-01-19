@@ -91,6 +91,25 @@
         suppression_2();
       }
 
+      elseif ($_GET['action'] == 'sup_type') {
+        if (!empty($_POST['capteur'])){
+          sup_type($_POST['capteur']);
+        }
+        else { throw new Exception('Veuillez sélectionner la pièce qui contient le capteur voulu !'); }
+      }
+
+      elseif ($_GET['action'] == 'validation_suppression') {
+        validation_suppression();
+      }
+
+      elseif ($_GET['action'] == 'valider_sup') {
+        valider_sup();
+      }
+
+      elseif ($_GET['action'] == 'precedent_sup') {
+        precedent_sup();
+      }
+
       elseif ($_GET['action'] == 'profil') {
         profil();
       }

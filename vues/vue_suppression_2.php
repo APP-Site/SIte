@@ -13,14 +13,14 @@
         <div class="dropdown">
           <div class="etape"><span>Selectionner le type de capteur</span></div>
           <div class="dropdown-content">
-            <form method="post" action="../controleurs/controleur_suppression_capteur.php">
+            <form method="post" action="index.php?action=sup_type">
               <label for="capteur" >Type : </label>
               <select name="capteur" id="capteur">
                 <?php while ($type = $types->fetch())
                 {
                   echo ' <option value = ' . $type['type'] . '>' . $type['type'] . '</option>';
-                  $types ->closeCursor();
-                } ?>
+                }
+                $types ->closeCursor(); ?>
               </select>
               <input type="submit" value="Suivant"/>
             </form>
@@ -28,8 +28,7 @@
         </div>
       </article>
 
-      <?php echo $piece;
-      include('vues/vue_tableau_de_bord.php'); ?>
+      <?php include('vues/vue_tableau_de_bord.php'); ?>
 
     </section>
   </div>

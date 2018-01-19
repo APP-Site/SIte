@@ -42,7 +42,7 @@ function id_type($capteur) {
 
 function type($piece, $code) {
   $bdd = bddConnect();
-  $req = $bdd -> prepare('SELECT * FROM capteur_actionneur, possession_capteur_actionneur WHERE nom_piece = ? AND code = ?  ');
+  $req = $bdd -> prepare('SELECT * FROM capteur_actionneur, possession_capteur_actionneur WHERE nom_piece = ? AND code = ? AND id_capteur_actionneur = capteur_actionneur.id ');
   $req -> execute(array($piece, $code));
   return $req;
 }
@@ -50,7 +50,13 @@ function type($piece, $code) {
 function ajout_capteur($id_capteur, $piece, $code){
   $bdd = bddConnect();
   $req = $bdd->prepare('INSERT INTO possession_capteur_actionneur(id_capteur_actionneur, etat, fonctionnement, id_possession_piece, code) VALUES (?, 1, 1, ?, ?)');
-$req -> execute(array($id_capteur, $piece, $code));
+  $req -> execute(array($id_capteur, $piece, $code));
+}
+
+function suppression_capteur($id_capteur, $piece, $code) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare ('DELETE FROM possession_capteur_actionneur WHERE code = ? AND id_capteur_actionneur = ? AND nom_piece = ?');
+  $req -> execute(array($code, $id_capteur, $piece));
 }
 
 function sujet_forum(){ //sélectionne les 5 derniers sujets

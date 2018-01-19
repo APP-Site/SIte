@@ -96,6 +96,38 @@
     require ('vues/vue_suppression_2.php');
   }
 
+  function sup_type($capteur){
+    session_start();
+    require('modeles/modele_site.php');
+    $id_capteur = id_type($capteur);
+    $_SESSION['capteur'] = $id_capteur;
+    header('Location: index.php?action=validation_suppression');
+  }
+
+  function validation_suppression(){
+    session_start();
+    $code=htmlspecialchars($_SESSION['code']);
+    require ('modeles/modele_site.php');
+    $pieces = select_piece($code); // affiche les pieces du client pour visualisation du tableau de bord
+    require ('vues/vue_suppression_validation.php');
+  }
+
+  function valider_sup(){
+    session_start();
+    $id_capteur = $_SESSION['capteur'];
+    $piece = $_SESSION['piece'];
+    $code = $_SESSION['code'];
+    require ('modeles/modele_site.php');
+    suppression_capteur($id_capteur, $piece, $code);
+    header ('Location: index.php?action=tableau_bord');
+  }
+
+  function precedent_sup(){
+    session_start();
+    unset($_SESSION['capteur']);
+    header ('Location: index.php?action=suppression_2');
+  }
+
   function profil() { // renvoie la page profil
     session_start();
     require ('vues/vue_profil.php');
