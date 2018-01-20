@@ -43,21 +43,21 @@ function delete_piece($piece, $code) {
 
 function delete_capteur($piece, $code) {
   $bdd = bddConnect();
-  $req = $bdd -> prepare('DELETE FROM possession_capteur_actionneur WHERE nom_piece = ? AND code = ?');
+  $req = $bdd -> prepare('DELETE FROM possession_capteur WHERE nom_piece = ? AND code = ?');
   $req -> execute(array($piece, $code));
 }
 
 function select_capteur_actionneur($code){ //selectionne les capteurs_actionneur de l'utilisateur
 
   $bdd = bddConnect();
-  $req = $bdd->prepare('SELECT * FROM possession_capteur_actionneur, capteur_actionneur WHERE possession_capteur_actionneur.id_capteur_actionneur = capteur_actionneur.id AND code = ?');
+  $req = $bdd->prepare('SELECT * FROM possession_capteur, capteur WHERE possession_capteur.id_capteur = capteur.id AND code = ?');
   $req -> execute(array($code));
   return $req;
 }
 
 function select_donnee($data2){ // sélectionne les vlaeurs du capteur_actionneur
   $bdd = bddConnect();
-  $req = $bdd->prepare('SELECT valeur FROM donnee WHERE id_possession_capteur_actionneur = ?');
+  $req = $bdd->prepare('SELECT valeur FROM donnee WHERE id_possession_capteur = ?');
   $req -> execute(array($data2));
   $res = $req->fetch();
   return $res;
@@ -65,13 +65,13 @@ function select_donnee($data2){ // sélectionne les vlaeurs du capteur_actionneu
 
 function select_type(){
   $bdd = bddConnect();
-  $req = $bdd -> query('SELECT * FROM capteur_actionneur WHERE statut = "capteur"');
+  $req = $bdd -> query('SELECT * FROM capteur ');
   return $req;
 }
 
 function id_type($capteur) {
   $bdd = bddConnect();
-  $req = $bdd -> prepare('SELECT id FROM capteur_actionneur WHERE type = ?');
+  $req = $bdd -> prepare('SELECT id FROM capteur WHERE type = ?');
   $req -> execute(array($capteur));
   $res = $req -> fetch();
   return $res['id'];
@@ -79,20 +79,20 @@ function id_type($capteur) {
 
 function type($piece, $code) {
   $bdd = bddConnect();
-  $req = $bdd -> prepare('SELECT * FROM capteur_actionneur, possession_capteur_actionneur WHERE nom_piece = ? AND code = ? AND id_capteur_actionneur = capteur_actionneur.id ');
+  $req = $bdd -> prepare('SELECT * FROM capteur, possession_capteur WHERE nom_piece = ? AND code = ? AND id_capteur = capteur.id ');
   $req -> execute(array($piece, $code));
   return $req;
 }
 
 function ajout_capteur($id_capteur, $piece, $code){
   $bdd = bddConnect();
-  $req = $bdd->prepare('INSERT INTO possession_capteur_actionneur(id_capteur_actionneur, etat, fonctionnement, nom_piece, code) VALUES (?, 1, 1, ?, ?)');
+  $req = $bdd->prepare('INSERT INTO possession_capteur(id_capteur, etat, fonctionnement, nom_piece, code) VALUES (?, 1, 1, ?, ?)');
   $req -> execute(array($id_capteur, $piece, $code));
 }
 
 function suppression_capteur($id_capteur, $piece, $code) {
   $bdd = bddConnect();
-  $req = $bdd -> prepare ('DELETE FROM possession_capteur_actionneur WHERE code = ? AND id_capteur_actionneur = ? AND nom_piece = ?');
+  $req = $bdd -> prepare ('DELETE FROM possession_capteur WHERE code = ? AND id_capteur = ? AND nom_piece = ?');
   $req -> execute(array($code, $id_capteur, $piece));
 }
 
