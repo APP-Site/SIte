@@ -5,19 +5,19 @@ une barre de recherche-->
 	<form method="post" action="traitement.php">
         <input type="text" name="recherche" class="recherche" placeholder="Recherche">
 	</form>
-	
+
 	<div class="boutique"><a href="#1">Boutique</a></div>
-	<div class="noti">Notification :</div>         
-	<div class="alerte">Aucunes alertes recensées</div>
-	
-	<article class='noter'>
-				Nous noter :<br/>
-                <div class="notation">
-                    <a href="#5" title="Donner 1 étoiles">☆</a>
-                    <a href="#4" title="Donner 2 étoiles">☆</a>
-                    <a href="#3" title="Donner 3 étoiles">☆</a>
-                    <a href="#2" title="Donner 4 étoiles">☆</a>
-                    <a href="#1" title="Donner 5 étoiles">☆</a>
-                </div>	
-	</article>
-</section>
+	<div class="noti">Actualité :</div>
+	<div class="alerte" style="font-size: small;">
+		<table>
+			<tr>
+				<th>Titre des sujets</th>
+			</tr>
+			<?php $actus = actualite();
+			while ($actu = $actus -> fetch()) { ?>
+				<tr>
+					<td><a href="index.php?action=actualite&id=<?= $actu['id_sujet'] ?>"><?= $actu['titre_sujet'] ?></a></td>
+				<?php } ?>
+			</table>
+		</div>
+	</section>

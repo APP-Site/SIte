@@ -140,6 +140,16 @@
         profil();
       }
 
+      elseif ($_GET['action'] == 'modifier_nom' || $_GET['action'] == 'modifier_prenom' || $_GET['action'] == 'modifier_telephone' || $_GET['action'] == 'modifier_email') {
+        profil();
+      }
+
+      elseif ($_GET['action'] == 'modification_nom' || $_GET['action'] == 'modification_prenom' || $_GET['action'] == 'modification_telephone' || $_GET['action'] == 'modification_email') {
+        if (!empty($_GET['type']) && !empty($_POST['modif'])) {
+          modifier_profil($_GET['type'], $_POST['modif']);
+        }
+      }
+
       elseif ($_GET['action'] == 'information'){
         information();
       }
@@ -177,6 +187,13 @@
         else { throw new Exception('Veuillez insérer un code client !'); }
       }
 
+      elseif ($_GET['action'] == "admin_recherche_capteur") {
+        if (!empty($_POST['capt_admin'])) {
+          admin_capteur($_POST['capt_admin']);
+        }
+        else { throw new Exception('Veuillez insérer un code client !'); }
+      }
+
       elseif ($_GET['action'] == "admin_ajout_capteur") {
         if (!empty($_POST['type']) && !empty($_POST['unite']) && !empty($_POST['image']) &&!empty($_POST['ref'])) {
           admin_ajout_capteur($_POST['type'], $_POST['unite'], $_POST['image'], $_POST['ref']);
@@ -184,9 +201,28 @@
         else { throw new Exception('Tous les champs ne sont pas remplis !'); }
       }
 
+      elseif ($_GET['action'] == "admin_ajout_actualite") {
+        if (!empty($_POST['sujet_actu']) && !empty($_POST['contenu_actu'])) {
+          admin_ajout_actualite($_POST['sujet_actu'], $_POST['contenu_actu']);
+        }
+        else { throw new Exception('Tous les champs ne sont pas remplis !'); }
+      }
+
       elseif ($_GET['action'] == "supprimer_client") {
         if (!empty($_GET['code'])) {
           supprimer_client($_GET['code']);
+        }
+      }
+
+      elseif ($_GET['action'] == "supprimer_capteur") {
+        if (!empty($_GET['ref'])) {
+          supprimer_capteur($_GET['ref']);
+        }
+      }
+
+      elseif ($_GET['action'] == "actualite") {
+        if (!empty($_GET['id'])) {
+          contenu_actualite($_GET['id']);
         }
       }
 

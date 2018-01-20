@@ -21,6 +21,24 @@ function supprimer_client($code) {
   require ('modeles/modele_admin.php');
   delete_client($code);
   delete_piece($code);
-  delete_capteur($code);
+  delete_capteur_client($code);
+  header ('Location: index.php?action=admin');
+}
+
+function admin_capteur($ref) {
+  require ('modeles/modele_admin.php');
+  $capteur = select_capteur($ref);
+  require ('vues/vue_admin.php');
+}
+
+function supprimer_capteur($ref) {
+  require ('modeles/modele_admin.php');
+  delete_capteur($ref);
+  header ('Location: index.php?action=admin');
+}
+
+function admin_ajout_actualite($sujet, $cont) {
+  require ('modeles/modele_admin.php');
+  ajout_actu($sujet, $cont);
   header ('Location: index.php?action=admin');
 }

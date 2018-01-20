@@ -2,6 +2,26 @@
 
 require_once ('modeles/modele_connexion_bdd.php');
 
+function actualite() {
+  $bdd = bddConnect();
+  $req = $bdd -> query('SELECT * FROM sujet_actualite ORDER BY date_sujet DESC LIMIT 0, 5');
+  return $req;
+}
+
+function sujet_actu($id) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare('SELECT * FROM sujet_actualite WHERE id_sujet = ?');
+  $req -> execute(array($id));
+  $res = $req -> fetch();
+  return $res;
+}
+
+function update_profil($type, $modif, $code) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare('UPDATE utilisateur SET ' .$type. ' = ? WHERE code = ?');
+  $req -> execute(array($modif, $code));
+}
+
 function insert_piece($nom, $code) {
   $bdd = bddConnect();
   $req = $bdd -> prepare('INSERT INTO possession_piece (nom, code) VALUES (?, ?)');

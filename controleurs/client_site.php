@@ -5,6 +5,13 @@
     require('vues/vue_editeur.php');
   }
 
+  function contenu_actualite($id) {
+    session_start();
+    require ('modeles/modele_site.php');
+    $sujet_actu = sujet_actu($id);
+    require ('vues/vue_actualite.php');
+  }
+
   function poste_piece($piece){
     session_start();
     $piece = htmlspecialchars($piece);
@@ -16,7 +23,17 @@
 
   function profil() { // renvoie la page profil
     session_start();
+    require ('modeles/modele_site.php');
     require ('vues/vue_profil.php');
+  }
+
+  function modifier_profil($type, $modif) {
+    session_start();
+    require ('modeles/modele_site.php');
+    $code = htmlspecialchars($_SESSION['code']);
+    update_profil($type, $modif, $code);
+    $_SESSION[$type] = $modif;
+    header ('Location: index.php?action=profil');
   }
 
   function information() { //renvoie la page information

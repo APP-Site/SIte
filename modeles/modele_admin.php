@@ -2,6 +2,12 @@
 
 require_once ('modeles/modele_connexion_bdd.php');
 
+function actualite() {
+  $bdd = bddConnect();
+  $req = $bdd -> query('SELECT * FROM sujet_actualite ORDER BY date_sujet DESC LIMIT 0, 10');
+  return $req;
+}
+
 function select_client($code) {
   $bdd = bddConnect();
   $req = $bdd -> prepare('SELECT * FROM utilisateur WHERE code = ?');
@@ -22,7 +28,7 @@ function delete_client($code) {
   $req -> execute(array($code));
 }
 
-function delete_capteur($code) {
+function delete_capteur_client($code) {
   $bdd = bddConnect();
   $req = $bdd -> prepare ('DELETE FROM possession_capteur_actionneur WHERE code = ?');
   $req -> execute(array($code));
@@ -32,4 +38,24 @@ function delete_piece($code) {
   $bdd = bddConnect();
   $req = $bdd -> prepare ('DELETE FROM possession_piece WHERE code = ?');
   $req -> execute(array($code));
+}
+
+function select_capteur($ref) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare('SELECT * FROM capteur_actionneur WHERE reference = ?');
+  $req -> execute(array($ref));
+  $res = $req -> fetch();
+  return $res;
+}
+
+function delete_capteur($ref) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare ('DELETE FROM capteur_actionneur WHERE reference = ?');
+  $req -> execute(array($ref));
+}
+
+function ajout_actu($sujet, $cont) {
+  $bdd = bddConnect();
+  $req = $bdd -> prepare ('INSERT INTO sujet_actualite (titre_sujet, contenu_actualite, date_sujet) VALUES (?, ?, NOW())');
+  $req -> execute(array($sujet, $cont));
 }
