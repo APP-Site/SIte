@@ -17,9 +17,9 @@
               <label for="capteur" >Type : </label>
               <select name="capteur" id="capteur">
                 <?php while ($type = $types->fetch())
-                {
-                  echo ' <option value = ' . $type['type'] . '>' . $type['type'] . '</option>';
-                }
+                { ?>
+                  <option> <?= $type['type'] ?></option>
+                <?php }
                 $types -> closeCursor();
                 ?>
               </select>

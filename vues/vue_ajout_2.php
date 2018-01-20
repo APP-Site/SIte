@@ -17,9 +17,9 @@
               <label for="piece">Pièce : </label>
               <select name="piece" id="piece">
                 <?php while ($piece = $pieces_ajout->fetch())
-                {
-                  echo ' <option value = ' . $piece['nom'] . '>' . $piece['nom'] . '</option>';
-                }
+                { ?>
+                  <option><?= $piece['nom'] ?></option>
+                <?php }
                 $pieces_ajout -> closeCursor();
                 ?>
               </select>
