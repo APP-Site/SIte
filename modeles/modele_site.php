@@ -118,8 +118,8 @@ function select_topic($id) { // sélectionne un sujet de forum
 
 function select_commentaire($id) { // sélectionne les commentaires correspondant au sujet sélectionné
   $bdd = bddConnect();
-  $req = $bdd -> prepare('SELECT utilisateur.prenom, utilisateur.nom, contenu_commentaire, date_commentaire FROM sujet_forum, commentaire_sujet_forum, utilisateur WHERE id_topic = ? AND utilisateur.code = commentaire_sujet_forum.code ORDER BY date_commentaire');
-  $req -> execute(array($id));
+  $req = $bdd -> prepare('SELECT utilisateur.prenom, utilisateur.nom, contenu_commentaire, date_commentaire FROM sujet_forum, commentaire_sujet_forum, utilisateur WHERE id_sujet_forum = ? AND id_topic = ? AND utilisateur.code = commentaire_sujet_forum.code ORDER BY date_commentaire');
+  $req -> execute(array($id, $id));
   return $req;
 }
 

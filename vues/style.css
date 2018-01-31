@@ -511,53 +511,46 @@ footer a
 .forum
 {
 	display: flex;
-	width: 80%;
+	flex-direction: column;
 	justify-content: space-between;
+	width: 100%;
 }
 
 .contenu
 {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-items: baseline;
+}
+
+.forum .cote_D_page
+{
+	margin: 20px;
+}
+
+.forum input, .forum textarea
+{
+	margin-left: 10px;
 }
 
 .forum .sujet
 {
 	margin-top: 15px;
 	margin-left: 20px;
-	height: 500px;
 }
-
-
-.forum aside
-{
-	margin-top: 30px;
-	border-left: 5px solid green;
-	padding-left: 10px;
-	position: absolute;
-	right: 40px;
-	height: 70%;
-}
-
 
 .forum th, .forum td
 {
 	border: 2px green solid;
 	padding: 5px;
 	text-align:center;
+	min-width: 200px;
 }
 
 table
 {
 	border-collapse: collapse;
 	width: 100%;
-}
-
-.news
-{
-	margin-top: 50px;
 }
 
 /* sujet forum */

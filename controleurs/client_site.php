@@ -64,7 +64,7 @@
     session_start();
     require ('modeles/modele_site.php');
     $topic = select_topic($id); // récupère les informations du topic sélectionné
-    $commentaires = select_commentaire($id); // récupère les commentaires du topic sélectionné
+    $commentaires = select_commentaire($id);
     require ('vues/vue_topic_forum.php');
   }
 
