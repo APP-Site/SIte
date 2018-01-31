@@ -20,7 +20,7 @@ elseif (isset($_POST['actionneur']) && empty($_POST['finalisation']))
 {
   $_SESSION['actionneur'] = $_POST['actionneur'];
   //On test la validitée de la varriable récupérée
-  include('../modele/modele_securite_var_capteur_actionneur.php');
+  include('../modele/modele_securite_var_actionneur.php');
   header('Location: ../vues/vue_tableau_de_bord_valider_suppression_actionneur.php?titre=Tableau de bord');
   exit();
 }
@@ -34,7 +34,7 @@ include('../modele/modele_connexion_bdd.php');
 //Recuperation de l'id du type d'actionneur
 include('../modele/modele_recuperer_id_type_actionneur.php');
 //Recuperation de l'id de la ligne a supprimer dans possession_capteur_actionneur
-include('../modele/modele_recuperer_id_possession_capteur_actionneur.php');
+include('../modele/modele_recuperer_id_possession_actionneur.php');
 
 echo $id_suppression;
 //Test sur la quel bouton à appuyé l'utilisateur soi valider soit annuler soir prrécédent

@@ -10,7 +10,7 @@ session_start()
   {
     $_SESSION['actionneur'] = $_POST['actionneur'];
     //On test la validitée de la varriable récupérée
-    include('../modele/modele_securite_var_capteur_actionneur.php');
+    include('../modele/modele_securite_var_actionneur.php');
     header('Location: ../vues/vue_tableau_de_bord_ajouter_actionneur_3sur4.php?titre=Tableau de bord');
     exit();
   }

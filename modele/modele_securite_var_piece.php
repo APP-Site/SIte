@@ -18,7 +18,6 @@ while($donnees = $reponse->fetch())
     $verification = false;
   }
 }
-
 //Si la varriable correspond à un nom de pièce dans la base de donnée on continue à executer le code sinon on renvoie vers une page d'erreure
 if($verification == false)
 {

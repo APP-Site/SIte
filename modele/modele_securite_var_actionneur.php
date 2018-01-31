@@ -7,8 +7,7 @@ $reponse = $bdd->query('SELECT type FROM capteur_actionneur');
 
 while($donnees = $reponse->fetch())
 {
-    //Si c'est un capteur on test si la varriable capteur entrée par l'utilisateur correspond à un capteur dans la BDD
-    if ($_SESSION['capteur']==$donnees['type'])
+    if ($_SESSION['actionneur']==$donnees['type'])
     {
       $verification = true;
       break ;
@@ -18,8 +17,6 @@ while($donnees = $reponse->fetch())
       $verification = false;
     }
 }
-
-
 
 //Si la varrable concodre avec la base de donnée on continue l'execution du code sinon on renvoie à une page d'erreur
 if($verification == false)
